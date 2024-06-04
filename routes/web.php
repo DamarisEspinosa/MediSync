@@ -15,6 +15,11 @@ Route::get('/doctor', function () {
     return view('doctor');
 });
 
+
+Route::get('/citas', function () {
+    return view('citas');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
