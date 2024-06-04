@@ -15,7 +15,6 @@ Route::get('/doctor', function () {
     return view('doctor');
 });
 
-
 Route::get('/citas', function () {
     return view('citas');
 });
@@ -39,6 +38,7 @@ Route::get('/registroPacientes', function () {
 Route::get('/registroUsuarios', function () {
     return view('registroUsuarios');
 });
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
