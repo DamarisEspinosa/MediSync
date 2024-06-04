@@ -19,7 +19,6 @@
         </div>
     </header>
     
-    
 
     <div class="flex justify-center mt-6">
         <div class="relative w-2/3 max-w-2xl">
