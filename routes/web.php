@@ -20,6 +20,25 @@ Route::get('/citas', function () {
     return view('citas');
 });
 
+Route::get('/detallesCita', function () {
+    return view('detallesCita');
+});
+
+Route::get('/detallesPacientes', function () {
+    return view('detallesPacientes');
+});
+
+Route::get('/expediente', function () {
+    return view('expediente');
+});
+
+Route::get('/registroPacientes', function () {
+    return view('registroPacientes');
+});
+
+Route::get('/registroUsuarios', function () {
+    return view('registroUsuarios');
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

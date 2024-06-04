@@ -11,7 +11,7 @@
 <body style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center; height: 100vh; margin: 0; padding: 0;">
     <div class="flex justify-center items-center h-full">
         <div class="bg-opacity-75 bg-white p-4 md:p-10 rounded-lg shadow-xl flex flex-col items-center w-full max-w-md">
-            <h2 class="text-3xl font-bold mt-6 text-white bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-700">Bienvenido</h2>
+            <h2 class=" text-4xl font-bold mt-6 text-blue-600 hover:text-blue-500">Bienvenido</h2>
             <form class="mt-6 w-full">
                 <div class="mb-4">
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
