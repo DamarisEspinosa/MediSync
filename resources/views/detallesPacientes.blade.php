@@ -50,11 +50,11 @@
                 </div>
                 <div class="mb-2">
                     <label class="block font-medium text-blue-600">Enfermedades crónicas que padece:</label>
-                    <p class="text-gray-900">Esquizofrenia</p>
+                    <p class="text-gray-900">No aplica</p>
                 </div>
                 <div class="mb-2">
                     <label class="block font-medium text-blue-600">Alergias:</label>
-                    <p class="text-gray-900">A las mentiras</p>
+                    <p class="text-gray-900">A la penicilina</p>
                 </div>
                 <div class="mb-2">
                     <label class="block font-medium text-blue-600">Teléfono:</label>

@@ -26,22 +26,26 @@
             <div class="grid grid-cols-2 gap-4">
                 <div class="mb-2">
                     <label class="block font-medium text-blue-600">Motivo de la cita:</label>
-                    <p class="text-gray-900">Nomas por que estaba aburrida</p>
+                    <p class="text-gray-900">Dolor estomacal</p>
                 </div>
                 <div class="mb-2">
                     <label class="block font-medium text-blue-600">Fecha de la cita:</label>
-                    <p class="text-gray-900">25/08/2025</p>
+                    <p class="text-gray-900">25/05/2024</p>
                 </div>
                 <div class="mb-2">
                     <label class="block font-medium text-blue-600">Estudios a realizar:</label>
-                    <p class="text-gray-900">Prueba psiquiatrica</p>
+                    <p class="text-gray-900">No aplica</p>
+                </div>
+                <div class="mb-2">
+                    <label class="block font-medium text-blue-600">Hora de la cita:</label>
+                    <p class="text-gray-900">04:16</p>
                 </div>
                 <div class="mb-4 col-span-2">
                     <label class="block font-medium text-blue-600">Medicamentos recetados:</label>
                     <ul class="list-disc list-inside text-gray-900">
                         <li>Paracetamol</li>
+                        <li>Ibuprofeno</li>
                         <li>Keterolaco</li>
-                        <li>Clonazepan</li>
                     </ul>
                 </div>
             </div>
