@@ -8,13 +8,14 @@
     <title>Registro Usuarios</title>
 </head>
 
+
 <body
     style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center; height: 100vh; margin: 0; padding: 0;">
     <header class="flex justify-between items-center bg-opacity-75 bg-white p-4">
         <h1 class="text-2xl font-bold text-gray-800">SaludConecta</h1>
     </header>
 
-    <div class="  mt-6 flex items-center justify-center h-screen">
+    <div class="flex items-center justify-center h-screen" style="margin-top: -65px;">
         <div class="bg-white bg-opacity-75 p-8 md:p-10 rounded-lg shadow-xl flex flex-col items-center w-full max-w-2xl"> 
             <h2 class="text-3xl font-bold text-blue-500">Registro</h2>
             <form class="mt-6 w-full grid grid-cols-2 gap-4">
@@ -87,4 +88,5 @@
         </div>
     </div>
 </body>
+
 </html>
