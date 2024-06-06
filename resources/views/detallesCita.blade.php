@@ -15,47 +15,51 @@
         <div class="flex items-center">
             <button class="text-blue-500 px-4 py-2 rounded">Catálogo de productos</button>
             <div class="ml-4">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Cerrar sesión</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/'">Cerrar sesión</button>
             </div>
         </div>
     </header>
 
+  
     <div class="flex items-center justify-center h-screen" style="margin-top: -75px;">
         <div class="bg-white bg-opacity-75 p-8 rounded-lg shadow-md w-full max-w-3xl">
             <h2 class="text-3xl font-bold text-blue-600 text-center mb-4">Detalles de la cita</h2>
             <div class="grid grid-cols-2 gap-4">
                 <div class="mb-2">
                     <label class="block font-medium text-blue-600">Motivo de la cita:</label>
-                    <p class="text-gray-900">Dolor estomacal</p>
+                    <input type="text" name="motivo" placeholder="Motivo de la cita" class="w-full px-4 py-2 border rounded-md">
                 </div>
                 <div class="mb-2">
                     <label class="block font-medium text-blue-600">Fecha de la cita:</label>
-                    <p class="text-gray-900">25/05/2024</p>
+                    <input type="date" name="fecha" class="w-full px-4 py-2 border rounded-md">
                 </div>
                 <div class="mb-2">
                     <label class="block font-medium text-blue-600">Estudios a realizar:</label>
-                    <p class="text-gray-900">No aplica</p>
+                    <input type="text" name="estudios" placeholder="Estudios a realizar" class="w-full px-4 py-2 border rounded-md">
                 </div>
                 <div class="mb-2">
                     <label class="block font-medium text-blue-600">Hora de la cita:</label>
-                    <p class="text-gray-900">04:16</p>
+                    <input type="time" name="hora" class="w-full px-4 py-2 border rounded-md">
                 </div>
                 <div class="mb-4 col-span-2">
                     <label class="block font-medium text-blue-600">Medicamentos recetados:</label>
-                    <ul class="list-disc list-inside text-gray-900">
-                        <li>Paracetamol</li>
-                        <li>Ibuprofeno</li>
-                        <li>Keterolaco</li>
-                    </ul>
+                    <form id="medicationsForm">
+                        <div id="medicationFields" class="space-y-2">
+                            <div class="flex items-center">
+                                <input type="text" name="medicamentos[]" placeholder="Medicamento" class="flex-1 px-4 py-2 border rounded-md">
+                            </div>
+                        </div>
+                        <button type="button" onclick="addMedicationField()" class="mt-2 text-blue-500">+ Añadir más</button>
+                    </form>
                 </div>
             </div>
             <div class="flex justify-between mt-6">
                 <button type="button" style="margin-right: 16px;"
-                    class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" onclick="location.href='/expediente'">
                     Regresar al expediente
                 </button>
                 <button type="button" style="margin-right: 16px;"
-                    class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" onclick="location.href='/doctor'">
                     Regresar al inicio
                 </button>
                 <button type="button"
@@ -65,6 +69,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function addMedicationField() {
+            const container = document.getElementById('medicationFields');
+            const field = document.createElement('div');
+            field.className = 'flex items-center mt-2';
+            field.innerHTML = '<input type="text" name="medicamentos[]" placeholder="Medicamento" class="flex-1 px-4 py-2 border rounded-md">';
+            container.appendChild(field);
+        }
+    </script>
 </body>
 
 </html>

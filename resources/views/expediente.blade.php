@@ -16,7 +16,7 @@
         <div class="flex items-center">
             <button class="text-blue-500 px-4 py-2 rounded">Catálogo de productos</button>
             <div class="ml-4">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Cerrar sesión</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/'">Cerrar sesión</button>
             </div>
         </div>
     </header>
@@ -37,15 +37,15 @@
                         <tbody>
                             <tr>
                                 <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
-                                <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">ver detalles</button></td>
+                                <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/detallesCita'">ver detalles</button></td>
                             </tr>
                             <tr>
                                 <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
-                                <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">ver detalles</button></td>
+                                <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"  onclick="location.href='/detallesCita'">ver detalles</button></td>
                             </tr>
                             <tr>
                                 <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
-                                <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">ver detalles</button></td>
+                                <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"  onclick="location.href='/detallesCita'">ver detalles</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -59,7 +59,7 @@
                     Enviar expediente
                 </button>
                 <button type="button"
-                    class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" onclick="location.href='/doctor'">
                     Regresar al inicio
                 </button>
             </div>

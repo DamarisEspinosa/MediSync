@@ -14,7 +14,7 @@
         <div class="flex items-center">
             <button class="text-blue px-4 py-2 rounded">Catálogo de productos</button>
             <div class="ml-4">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Cerrar sesión</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/'">Cerrar sesión</button>
             </div>
         </div>
     </header>
@@ -48,19 +48,19 @@
                         <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">Luisana Guadalupe</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">04:45</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">ver detalles</button></td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/detallesPacientes'">ver detalles</button></td>
                     </tr>
                     <tr>
                         <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">Luisana Guadalupe</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">04:45</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">ver detalles</button></td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/detallesPacientes'">ver detalles</button></td>
                     </tr>
                     <tr>
                         <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">Luisana Guadalupe</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">04:45</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">ver detalles</button></td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/detallesPacientes'">ver detalles</button></td>
                     </tr>
                 </tbody>
             </table>
