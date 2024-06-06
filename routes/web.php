@@ -19,6 +19,10 @@ Route::get('/citas', function () {
     return view('citas');
 });
 
+Route::get('/pago', function () {
+    return view('pago');
+});
+
 Route::get('/detallesCita', function () {
     return view('detallesCita');
 });

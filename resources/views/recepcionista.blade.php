@@ -11,7 +11,7 @@
 <body style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center; height: 100vh; margin: 0; padding: 0;">
     <header class="flex justify-between items-center bg-opacity-75 bg-white p-4">
         <h1 class="text-2xl font-bold text-gray-800">SaludConecta</h1>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Cerrar sesión</button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/'">Cerrar sesión</button>
     </header>
 
 
@@ -46,29 +46,29 @@
                         <td class="py-2 px-4 border-b border-gray-300">luisanasalas2508@gmail.com</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">20/05/2024</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Agendar cita</button></td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver pago</button></td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/citas'">Agendar cita</button></td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-60" onclick="location.href='/pago'">Ver pago</button></td>
                     </tr>
                     <tr>
                         <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">Luisana Guadalupe</td>
                         <td class="py-2 px-4 border-b border-gray-300">luisanasalas2508@gmail.com</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">20/05/2024</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Agendar cita</button></td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver pago</button></td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/citas'">Agendar cita</button></td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-60" onclick="location.href='/pago'">Ver pago</button></td>
                     </tr>
                     <tr>
                         <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">Luisana Guadalupe</td>
                         <td class="py-2 px-4 border-b border-gray-300">luisanasalas2508@gmail.com</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">20/05/2024</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Agendar cita</button></td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ver pago</button></td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/citas'">Agendar cita</button></td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-60" onclick="location.href='/pago'">Ver pago</button></td>
                     </tr>
                 </tbody>
             </table>
             <div class="flex justify-end mt-4">
-                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Registrar nuevo paciente</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/registroPacientes'">Registrar nuevo paciente</button>
             </div>
         </div>
     </div>
