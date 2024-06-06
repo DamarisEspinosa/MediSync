@@ -33,7 +33,7 @@
                 </div>
             </form>
             <p class="mt-6 text-center text-sm text-gray-600">
-                No tienes cuenta? <a href="#" class="font-medium text-blue-600 hover:text-blue-500"> Regístrate
+                No tienes cuenta? <a href="#" class="font-medium text-blue-600 hover:text-blue-500" onclick="location.href='/registroUsuarios'"> Regístrate
                 </a>
             </p>
         </div>
