@@ -8,10 +8,12 @@
     <title>Ver Pago</title>
 </head>
 
-<body style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center; height: 100vh; margin: 0; padding: 0;">
+<body
+    style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center; height: 100vh; margin: 0; padding: 0;">
     <header class="flex justify-between items-center bg-opacity-75 bg-white p-4">
         <h1 class="text-2xl font-bold text-gray-800">SaludConecta</h1>
-        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/login'">Cerrar sesión</button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/'">Cerrar
+            sesión</button>
     </header>
 
     <div class="flex justify-center mt-6">
@@ -29,7 +31,7 @@
     <div class="flex justify-center mt-6">
         <div class="bg-white bg-opacity-75 p-8 rounded-lg shadow-md w-full max-w-3xl">
             <h2 class="text-3xl font-bold text-blue-600 text-center mb-4">Detalles del pago</h2>
-           
+
             <div class="flex-grow flex items-center justify-center mt-6">
                 <div class="w-full max-w-xl bg-white bg-opacity-75 rounded-lg p-6">
                     <table class="min-w-full bg-white border border-gray-300">
@@ -65,18 +67,15 @@
                 <h3 class="text-xl font-bold text-gray-800">Total: <span class="text-blue-500">$120.00</span></h3>
             </div>
 
-            <div class="col-span-2 flex justify-between mt-6">
+            <div class="flex justify-end mt-6">
                 <button type="button"
-                    style="margin-right: 16px;" 
-                    class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    Ver expediente
-                </button>
-                <button type="button"
-                    class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    class=" flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                    onclick="location.href='/recepcionista'">
                     Regresar
                 </button>
             </div>
         </div>
     </div>
 </body>
+
 </html>
