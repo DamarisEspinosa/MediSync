@@ -15,9 +15,13 @@ class LoginController extends Controller
 
         $user = new User();
 
-        $user->name = $request->name;
-        $user->email = $request->email;
+        $user->nombre = $request->nombre;
+        $user->apellidos = $request->apellidos;
         $user->password = $request->password;
+        $user->correo = $request->correo;
+        $user->telefono = $request->telefono;
+        $user->profesion = $request->profesion;
+        $user->tipoUsuario = $request->tipoUsuario;
 
         $user->save();
 
