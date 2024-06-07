@@ -18,8 +18,27 @@
     <div class="flex items-center justify-center h-screen" style="margin-top: -65px;">
         <div class="bg-white bg-opacity-75 p-8 md:p-10 rounded-lg shadow-xl flex flex-col items-center w-full max-w-2xl"> 
             <h2 class="text-3xl font-bold text-blue-500">Registro</h2>
-            <form class="mt-6 w-full grid grid-cols-2 gap-4">
+            <form class="mt-6 w-full grid grid-cols-2 gap-4" action="{{ route('validar-registro') }}" method="POST">
+                @csrf
                 <div>
+                    <label for="nombres" class="block text-sm font-medium text-gray-700">Nombre(s)</label>
+                    <input type="text" name="name" id="name"
+                        class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        required>
+                </div>
+                <div>
+                    <label for="contrasena" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                    <input type="password" name="password" id="password"
+                        class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        required>
+                </div>
+                <div>
+                    <label for="correo" class="block text-sm font-medium text-gray-700">Correo</label>
+                    <input type="email" name="email" id="email"
+                        class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                        required>
+                </div>
+                <!--<div>
                     <label for="nombres" class="block text-sm font-medium text-gray-700">Nombre(s)</label>
                     <input type="text" name="nombres" id="nombres"
                         class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -71,7 +90,7 @@
                     <input type="tel" name="telefono" id="telefono"
                         class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         required>
-                </div>
+                </div>-->
 
                 <div class="col-span-2 flex justify-between mt-6">
                     <button type="submit"

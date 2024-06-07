@@ -1,11 +1,14 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('login');
 });
+
+Route::post('/validar-registro',[LoginController::class,'register'])->name('validar-registro');
 
 Route::get('/recepcionista', function () {
     return view('recepcionista');
