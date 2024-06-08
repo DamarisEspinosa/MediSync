@@ -27,9 +27,32 @@ class LoginController extends Controller
 
         Auth::login($user);
 
+        return redirect(route('doctor'));
+    }
+
+    public function doLogin(Request $request){
+
+        $credentials = [
+            "correo" => $request->correo,
+            "password" => $request->password
+        ];
+
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect(route('doctor'));
+        } else {
+            return redirect('login');
+        }
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
         return redirect(route('login'));
     }
 }
-
 
 ?>

@@ -8,7 +8,10 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::post('/validar-registro',[LoginController::class,'register'])->name('validar-registro');
+Route::get('logout',[LoginController::class,'logout'])->name('logout');
+
+Route::post('/validar-registro',[LoginController::class, 'register'])->name('validar-registro');
+Route::post('/verificar-login', [LoginController::class, 'doLogin'])->name('verificar-login');
 
 Route::get('/recepcionista', function () {
     return view('recepcionista');
@@ -16,7 +19,7 @@ Route::get('/recepcionista', function () {
 
 Route::get('/doctor', function () {
     return view('doctor');
-});
+})->name('doctor');
 
 Route::get('/citas', function () {
     return view('citas');
