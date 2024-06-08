@@ -15,7 +15,7 @@ class CreateExpedienteTable extends Migration
     {
         Schema::create('expediente', function (Blueprint $table) {
             $table->id('id_expediente');
-            $table->unsignedBigInteger('id_paciente');
+            $table->unsignedInteger('id_paciente');
             $table->date('fecha');
             $table->text('archivos')->nullable();
             $table->timestamps();

@@ -20,7 +20,7 @@ class LoginController extends Controller
         $user->password = $request->password;
         $user->correo = $request->correo;
         $user->telefono = $request->telefono;
-        $user->profesion = $request->profesion;
+        $user->area = $request->area;
         $user->tipoUsuario = $request->tipoUsuario;
 
         $user->save();

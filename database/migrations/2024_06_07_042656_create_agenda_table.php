@@ -15,7 +15,7 @@ class CreateAgendaTable extends Migration
     {
         Schema::create('agenda', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_cita');
+            $table->unsignedInteger('id_cita');
             $table->timestamps();
 
             // Definir la llave foránea
