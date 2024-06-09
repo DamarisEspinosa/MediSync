@@ -16,8 +16,10 @@ class Citas extends Model
      */
 
     protected $fillable = [
-        'motivo',
-        'fechaHora'
+        'motivos',
+        'fechaHora',
+        'id_paciente',
+        'id_tipo_servicio'
     ];
 
     /**
@@ -37,6 +39,14 @@ class Citas extends Model
      */
     protected $casts = [
         'fechaHora' => 'datetime',
+        'id_paciente' => 'integer',
+        'id_tipo_servicio' => 'integer'
     ];
     
+    public function paciente() {
+        return $this->belongsTo(Paciente::class, 'id_paciente');
+    }
+    public function tipo_servicio(){
+        return $this->belongsTo('App\Models\Tipo_servicio', 'id_tipo_servicio');
+    }
 }

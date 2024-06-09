@@ -36,8 +36,6 @@
                         <th class="py-2 px-4 border-b border-gray-300">Correo</th>
                         <th class="py-2 px-4 border-b border-gray-300">Última cita</th>
                         <th class="py-2 px-4 border-b border-gray-300">Próxima cita</th>
-                        <th class="py-2 px-4 border-b border-gray-300">Agendar cita</th>
-                        <th class="py-2 px-4 border-b border-gray-300">Agendar servicio</th>
                         <th class="py-2 px-4 border-b border-gray-300">Total de pago</th>
                     </tr>
                 </thead>
@@ -47,8 +45,6 @@
                         <td class="py-2 px-4 border-b border-gray-300">luisanasalas2508@gmail.com</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">20/05/2024</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/citas'">Agendar cita</button></td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/servicios'">Agendar servicio</button></td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-60" onclick="location.href='/pago'">Ver pago</button></td>
                     </tr>
                     <tr>
@@ -56,8 +52,6 @@
                         <td class="py-2 px-4 border-b border-gray-300">luisanasalas2508@gmail.com</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">20/05/2024</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/citas'">Agendar cita</button></td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/servicios'">Agendar servicio</button></td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-60" onclick="location.href='/pago'">Ver pago</button></td>
                     </tr>
                     <tr>
@@ -65,13 +59,13 @@
                         <td class="py-2 px-4 border-b border-gray-300">luisanasalas2508@gmail.com</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center">20/05/2024</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/citas'">Agendar cita</button></td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/servicios'">Agendar servicio</button></td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-60" onclick="location.href='/pago'">Ver pago</button></td>
                     </tr>
                 </tbody>
             </table>
-            <div class="flex justify-end mt-4">
+            <div class="flex justify-end mt-4 space-x-4">
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/citas'">Agendar cita</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/servicios'">Agendar servicio</button>
                 <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/registroPacientes'">Registrar nuevo paciente</button>
             </div>
         </div>

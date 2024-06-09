@@ -26,7 +26,7 @@ class LoginController extends Controller
         $user->save();
 
         Auth::login($user);
-
+        
         return redirect(route('doctor'));
     }
 
@@ -37,11 +37,19 @@ class LoginController extends Controller
             "password" => $request->password
         ];
 
+        Auth::attempt($credentials);
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect(route('doctor'));
+
+            // Buscamos al usuario por correo 
+            $usuario = User::where('correo', $request->correo)->firstOrFail();
+            if($usuario->tipoUsuario === 'Recepcionista') {
+                return redirect(route('recepcionista'));
+            } elseif ($usuario->tipoUsuario === 'Doctor') {
+                return redirect(route('doctor'));
+            }
         } else {
-            return redirect('login');
+            return redirect(route('login'));
         }
     }
 

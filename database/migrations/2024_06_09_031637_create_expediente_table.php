@@ -14,7 +14,7 @@ class CreateExpedienteTable extends Migration
     public function up()
     {
         Schema::create('expediente', function (Blueprint $table) {
-            $table->id('id_expediente');
+            $table->id();
             $table->unsignedBigInteger('id_paciente');
             $table->date('fecha');
             $table->text('archivos')->nullable();

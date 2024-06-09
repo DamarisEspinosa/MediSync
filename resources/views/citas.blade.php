@@ -20,22 +20,29 @@
             <form class="mt-6 w-full" action="{{ route('registrar-cita') }}" method="POST">
                 @csrf
                 <div class="mb-4">
-                    <label for="motivo" class="block text-sm font-medium text-gray-700">Nombre del paciente</label>
-                    <input type="motivo" name="motivo" id="motivo"
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre del paciente</label>
+                    <input type="text" name="nombre" id="nombre"
                            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                            required>
                 </div>
 
                 <div class="mb-4">
-                    <label for="motivo" class="block text-sm font-medium text-gray-700">Motivo de la cita</label>
-                    <input type="motivo" name="motivo" id="motivo"
+                    <label for="motivos" class="block text-sm font-medium text-gray-700">Motivo de la cita</label>
+                    <input type="text" name="motivos" id="motivos"
                            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                            required>
                 </div>
 
                 <div class="mb-4">
-                    <label for="fecha" class="block text-sm font-medium text-gray-700">Fecha y hora</label>
-                    <input type="datetime-local" name="fecha" id="fecha"
+                    <label for="tipoServicio" class="block text-sm font-medium text-gray-700">Tipo de servicio</label>
+                    <input type="text" name="tipoServicio" id="tipoServicio"
+                           class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                           required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="fechaHora" class="block text-sm font-medium text-gray-700">Fecha y hora</label>
+                    <input type="datetime-local" name="fechaHora" id="fechaHora"
                            class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                            required>
                 </div>
