@@ -32,6 +32,10 @@ Route::get('/citas', function () {
     return view('citas');
 });
 
+Route::get('/servicios', function () {
+    return view('servicios');
+});
+
 Route::get('/pago', function () {
     return view('pago');
 });

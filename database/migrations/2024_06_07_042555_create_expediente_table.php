@@ -15,13 +15,13 @@ class CreateExpedienteTable extends Migration
     {
         Schema::create('expediente', function (Blueprint $table) {
             $table->id('id_expediente');
-            $table->unsignedInteger('id_paciente');
+            $table->unsignedBigInteger('id_paciente');
             $table->date('fecha');
             $table->text('archivos')->nullable();
             $table->timestamps();
 
             // Definir la llave foránea
-            $table->foreign('id_paciente')->references('id')->on('paciente')->onDelete('cascade');
+            $table->foreign('id_paciente')->references('id')->on('pacientes')->onDelete('cascade');
         });
     }
 

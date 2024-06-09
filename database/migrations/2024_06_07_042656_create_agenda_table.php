@@ -15,11 +15,11 @@ class CreateAgendaTable extends Migration
     {
         Schema::create('agenda', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('id_cita');
+            $table->unsignedBigInteger('id_cita');
             $table->timestamps();
 
             // Definir la llave foránea
-            $table->foreign('id_cita')->references('id_cita')->on('citas')->onDelete('cascade');
+            $table->foreign('id_cita')->references('id')->on('citas')->onDelete('cascade');
         });
     }
 

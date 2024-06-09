@@ -17,12 +17,12 @@ class CreateCitasTable extends Migration
             $table->id();
             $table->string('motivos');
             $table->dateTime('fechaHora');
-            $table->unsignedInteger('id_paciente');
-            $table->unsignedInteger('id_tipo_servicio');
+            $table->unsignedBigInteger('id_paciente');
+            $table->unsignedBigInteger('id_tipo_servicio');
             $table->timestamps();
 
             // Definir las llaves foráneas
-            $table->foreign('id_paciente')->references('id')->on('paciente')->onDelete('cascade');
+            $table->foreign('id_paciente')->references('id')->on('pacientes')->onDelete('cascade');
             $table->foreign('id_tipo_servicio')->references('id')->on('tipo_servicios')->onDelete('cascade');
         });
     }
