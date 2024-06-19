@@ -2,9 +2,7 @@
 
 // Controllers
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PacienteController;
-use App\Http\Controllers\CitasController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -13,11 +11,7 @@ Route::get('/', function () {
 })->name('login');
 
 // POST para los formularios 
-Route::get('logout',[LoginController::class,'logout'])->name('logout');
-Route::post('/validar-registro',[LoginController::class, 'register'])->name('validar-registro');
-Route::post('/verificar-login', [LoginController::class, 'doLogin'])->name('verificar-login');
 Route::post('/registrar-pacientes', [PacienteController::class, 'registerPatient'])->name('registrar-pacientes');
-Route::post('/registrar-cita',[CitasController::class, 'registrarCita'])->name('registrar-cita');
 
 // Vistas para navegación entre ventanas 
 Route::get('/recepcionista', function () {

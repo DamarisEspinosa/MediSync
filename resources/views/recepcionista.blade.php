@@ -8,12 +8,11 @@
     <title>Bienvenida recepcionista</title>
 </head>
 
-<body style="background-image: url('img/fondo.jpg'); background-size: cover; background-position: center; height: 100vh; margin: 0; padding: 0;">
-    <header class="flex justify-between items-center bg-opacity-75 bg-white p-4">
-        <h1 class="text-2xl font-bold text-gray-800">SaludConecta</h1>
-        <a href="{{ route('logout') }}"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Cerrar sesión</button></a>
+<body style="background: #EBEBE9; background-size: cover; background-position: center; height: 100vh; margin: 0; padding: 0;">
+    <header class="flex justify-between items-center bg-opacity-75" style="background: #94B6E4; height: 70px;" >
+        <h1 class="text-2xl font-bold text-gray-800">MediSync</h1>
+        <a href="#"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Cerrar sesión</button></a>
     </header>
-
 
     <div class="flex justify-center mt-6">
         <div class="relative w-2/3 max-w-2xl">
@@ -65,7 +64,6 @@
             </table>
             <div class="flex justify-end mt-4 space-x-4">
                 <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/citas'">Agendar cita</button>
-                <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/servicios'">Agendar servicio</button>
                 <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/registroPacientes'">Registrar nuevo paciente</button>
             </div>
         </div>

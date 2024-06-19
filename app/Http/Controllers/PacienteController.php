@@ -26,8 +26,5 @@ class PacienteController extends Controller{
 
         return redirect(route('recepcionista'));
     }
-
-    public function paciente(){
-        return $this->belongsTo('App\Models\Paciente', 'id_paciente');
-    }
+    
 }

@@ -17,11 +17,7 @@ class CreateServiciosTable extends Migration
             $table->id();
             $table->string('nombre', 50);
             $table->decimal('precio', 10, 2);
-            $table->unsignedBigInteger('id_tipo_servicio');
             $table->timestamps();
-
-            // Definir la llave foránea
-            $table->foreign('id_tipo_servicio')->references('id')->on('tipo_servicios')->onDelete('cascade');
         });
     }
 
