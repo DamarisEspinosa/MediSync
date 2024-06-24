@@ -10,8 +10,13 @@
 
 <body style="background: #EBEBE9; background-size: cover; background-position: center; height: 100vh; margin: 0; padding: 0;">
     <header class="flex justify-between items-center bg-opacity-75" style="background: #94B6E4; height: 70px;" >
-        <h1 class="text-2xl font-bold text-gray-800">MediSync</h1>
-        <a href="#"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Cerrar sesión</button></a>
+        <div class=" flex flex-row items-center" style="padding: 10px 20px;">
+            <img src="img/MediSync.png" width="50" height="50"> 
+            <h1 class="text-2xl font-bold">MediSync</h1>
+        </div>
+        <div style="padding: 10px 20px;">
+            <a href="#"><button class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Cerrar sesión</button></a>
+        </div>
     </header>
 
     <div class="flex justify-center mt-6">
