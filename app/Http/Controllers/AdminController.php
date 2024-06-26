@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\Medico;
+use App\Models\Secretarias;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,27 +28,29 @@ class AdminController extends Controller
 
         $user->save();
         
-        return redirect(route('login'))->with('success', 'Registro exitoso. Por favor, inicia sesión.');
+        return redirect(route('administrador'))->with('success', 'Registro exitoso.');
     }
 
-    public function doLogin(Request $request){
+    public function doLogin(Request $request) {
         $credentials = [
             "email" => $request->email,
             "password" => $request->password
         ];
 
-        if(Auth::attempt($credentials)){
+        // Intentar autenticarse como Admin
+        $admin = User::where('email', $request->email)->firstOrFail();
+        if ($admin && Hash::check($request->password, $admin->password)) {
+            Auth::login($admin);
             $request->session()->regenerate();
-
-            // Buscamos al usuario por correo 
-            $usuario = User::where('email', $request->email)->firstOrFail();
-            if($usuario->tipoUsuario === 'Admin') {
-                return redirect(route('administrador'));
-            }
-        } else { 
-            return redirect(route('login'));
+            return redirect(route('administrador'));
         }
+
+        // Si llega aquí, las credenciales no son válidas
+        return redirect(route('login'))->withErrors([
+            'email' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
+        ]);
     }
+
 
     public function logout(Request $request){
         Auth::logout();

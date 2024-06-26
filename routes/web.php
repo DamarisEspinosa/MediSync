@@ -14,7 +14,7 @@ Route::get('/', function () {
 })->name('login');
 
 // POST para los formularios 
-Route::post('/registrar-pacientes', [PacienteController::class, 'registerPatient'])->name('registrar-pacientes');
+Route::post('/registrar-pacientes', [PacienteController::class, 'registrarPaciente'])->name('registrar-pacientes');
 Route::post('/registrar-admin', [AdminController::class, 'registrarAdmin'])->name('registrar-admin');
 Route::post('/do-login', [AdminController::class, 'doLogin'])->name('do-login');
 Route::post('/registrar-medico', [MedicoController::class, 'registrarMedico'])->name('registrar-medico');
@@ -38,24 +38,28 @@ Route::get('/registroSecretarias', function(){
     return view('registroSecretarias');
 })->name('registroSecretarias');
 
-
-
-///////////
-Route::get('/recepcionista', function () {
-    return view('recepcionista');
-})->name('recepcionista');
+Route::get('/secretaria', function () {
+    return view('secretaria');
+})->name('secretaria');
 
 Route::get('/doctor', function () {
     return view('doctor');
 })->name('doctor');
 
-Route::get('/citas', function () {
-    return view('citas');
-});
+Route::get('/registroPacientes', function () {
+    return view('registroPacientes');
+})->name('registroPacientes');
 
-Route::get('/servicios', function () {
-    return view('servicios');
-});
+Route::get('/registroCitas', function () {
+    return view('registroCitas');
+})->name('registroCitas');
+
+
+
+///////////
+
+
+
 
 Route::get('/pago', function () {
     return view('pago');
@@ -73,9 +77,7 @@ Route::get('/expediente', function () {
     return view('expediente');
 });
 
-Route::get('/registroPacientes', function () {
-    return view('registroPacientes');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

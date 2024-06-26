@@ -41,11 +41,11 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">Luisana Guadalupe</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center">04:45</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center">04:45</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center">04:45</td>
+                        <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">Luisa García</td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/1975</td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center">834-123-4567</td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center">luisagarcia@gmail.com</td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center">Dermatología</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/detallesPacientes'">ver detalles</button></td>
                     </tr>
                 </tbody>
@@ -68,11 +68,11 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">Luisana Guadalupe</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center">12/08/2023</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center">04:45</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center">04:45</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center">04:45</td>
+                        <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">Lidia Sánchez</td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center">18/01/1990</td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center">834-123-4567</td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center">lidiasanchez@gmail.com</td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center">Laboratorios</td>
                         <td class="py-2 px-4 border-b border-gray-300 text-center"><button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" onclick="location.href='/detallesPacientes'">ver detalles</button></td>
                     </tr>
                 </tbody>

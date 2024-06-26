@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password', 255);
             $table->string('especialidad', 30);
             $table->unsignedBigInteger('id_admin'); // para saber qué admin registró al médico o secretaria 
+            $table->string('tipoUsuario', 10);
             $table->timestamps(); // Añade las columnas created_at y updated_at
         });
     }

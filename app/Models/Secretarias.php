@@ -22,7 +22,8 @@ class Secretarias extends Authenticatable
         'email',
         'password',
         'area',
-        'id_admin'
+        'id_admin',
+        'tipoUsuario'
     ];
 
     /**

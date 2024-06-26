@@ -22,11 +22,11 @@ class MedicoController extends Controller
         $medico->password = $request->password;
         $medico->especialidad = $request->especialidad;
         $medico->id_admin = "1";
+        $medico->tipoUsuario = "Médico";
 
         $medico->save();
 
         //return $medico;
-
         return redirect(route('administrador'))->with('success', 'Registro exitoso. Por favor, inicia sesión.');
     }
 }

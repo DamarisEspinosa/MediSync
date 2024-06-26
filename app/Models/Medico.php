@@ -22,7 +22,8 @@ class Medico extends Authenticatable
         'email',
         'password',
         'especialidad',
-        'id_admin'
+        'id_admin',
+        'tipoUsuario'
     ];
 
     /**

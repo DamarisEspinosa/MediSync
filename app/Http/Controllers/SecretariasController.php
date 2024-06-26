@@ -21,7 +21,8 @@ class SecretariasController extends Controller
         $secretaria->email = $request->email;
         $secretaria->password = $request->password;
         $secretaria->area = $request->area;
-        $secretaria->id_admin = "1";
+        $secretaria->id_admin = "1"; // tengo que cambiarlo 
+        $secretaria->tipoUsuario = "Secretaria";
 
         $secretaria->save();
 
