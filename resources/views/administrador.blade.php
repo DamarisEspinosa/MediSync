@@ -16,9 +16,8 @@
             <h1 class="text-2xl font-bold">MediSync</h1>
         </div>
         <div class="px-4 py-2">
-            <a href=" {{ route('registroMedicos') }} " class="px-4 py-4 hover:text-white">Registrar médico</a>
-            <a href=" {{ route('registroSecretarias') }} " class=" px-4 py-4 hover:text-white">Registrar secretaria</a>
             <a href=" {{ route('registrarAdmin') }} " class=" px-4 py-4 hover:text-white">Registrar administrador</a>
+            <a href=" {{ route('registrarEmpleado') }} " class=" px-4 py-4 hover:text-white">Registrar empleado</a>
         </div>
         <div style="padding: 10px 20px;">
             <a href=" {{ route('do-logout') }} " class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Cerrar sesión</a>

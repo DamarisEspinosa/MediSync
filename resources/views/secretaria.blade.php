@@ -37,6 +37,7 @@
 
     <div class="flex-grow flex items-center justify-center mt-6">
         <div class="w-full max-w-7xl bg-white bg-opacity-75 rounded-lg p-6">
+            <!-- alerta para confirmar cuando quiera eliminar un paciente -->
             <table class="min-w-full bg-white border border-gray-300">
                 <thead>
                     <tr>

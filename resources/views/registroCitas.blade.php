@@ -65,7 +65,7 @@
                         class="mt-1 block w-full px-3 py-2 bg-transparent border-2 border-black rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         required>
                 </div>
-    
+
                 <div class="col-span-2 flex justify-between mt-6">
                     <button type="submit"
                         style="margin-right: 16px;" 

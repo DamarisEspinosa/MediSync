@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
-use App\Models\Medico;
-use App\Models\Secretarias;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,14 +19,52 @@ class AdminController extends Controller
         $user = new User();
 
         $user->nombre = $request->nombre;
-        $user->password = $request->password;
+        $user->fechaNacimiento = $request->fechaNacimiento;
         $user->telefono = $request->telefono;
         $user->email = $request->email;
-        $user->tipoUsuario = "Admin";
+        $user->password = $request->password;
+        $user->tipoUsuario = "admin";
+        $user->especialidad = null;
+        $user->area = null;
 
         $user->save();
         
-        return redirect(route('administrador'))->with('success', 'Registro exitoso.');
+        return redirect(route('administrador'));
+    }
+
+    public function registrarEmpleado(Request $request) {
+        // nombre, fechaNacimiento, telefono, email, password, tipoUsuario, especialidad, area 
+        /*$request->validate([
+            'nombre' => 'required|string|max:255',
+            'fechaNacimiento' => 'required|date',
+            'telefono' => 'required|string',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:6',
+            'tipoUsuario' => 'required|string|in:doctor,secretaria,enfermera',
+            'especialidad' => 'required_if:tipoUsuario,doctor|string|max:255',
+            'area' => 'required_if:tipoUsuario,secretaria,enfermera|string|max:255',
+        ]);*/
+
+        $user = new User();
+
+        $user->nombre = $request->nombre;
+        $user->fechaNacimiento = $request->fechaNacimiento;
+        $user->telefono = $request->telefono;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->tipoUsuario = $request->tipoUsuario;
+
+        if ($request->tipoUsuario == 'doctor') {
+            $user->especialidad = $request->especialidad;
+            $user->area = null;
+        } else if ($request->tipoUsuario == 'secretaria' || $request->tipoUsuario == 'enfermera') {
+            $user->area = $request->area;
+            $user->especialidad = null;
+        }
+
+        $user->save();
+        
+        return redirect(route('administrador'));
     }
 
     public function doLogin(Request $request) {
@@ -38,12 +74,7 @@ class AdminController extends Controller
         ];
 
         // Intentar autenticarse como Admin
-        $admin = User::where('email', $request->email)->firstOrFail();
-        if ($admin && Hash::check($request->password, $admin->password)) {
-            Auth::login($admin);
-            $request->session()->regenerate();
-            return redirect(route('administrador'));
-        }
+        
 
         // Si llega aquí, las credenciales no son válidas
         return redirect(route('login'))->withErrors([

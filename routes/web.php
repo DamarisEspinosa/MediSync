@@ -15,28 +15,23 @@ Route::get('/', function () {
 
 // POST para los formularios 
 Route::post('/registrar-pacientes', [PacienteController::class, 'registrarPaciente'])->name('registrar-pacientes');
-Route::post('/registrar-admin', [AdminController::class, 'registrarAdmin'])->name('registrar-admin');
+Route::post('/registrar-empleado', [AdminController::class, 'registrarEmpleado'])->name('registrar-empleado');
 Route::post('/do-login', [AdminController::class, 'doLogin'])->name('do-login');
-Route::post('/registrar-medico', [MedicoController::class, 'registrarMedico'])->name('registrar-medico');
-Route::post('/registrar-secretaria', [SecretariasController::class,'registrarSecretaria'])->name('registrar-secretaria');
+Route::post('/registrar-admin', [AdminController::class, 'registrarAdmin'])->name('registrar-admin');
 Route::get('/do-logout',[AdminController::class,'logout'])->name('do-logout');
 
 // Vistas para navegación entre ventanas 
-Route::get('/registrarAdmin', function () {
-    return view('registrarAdmin');
-})->name('registrarAdmin');
+Route::get('/registrarEmpleado', function () {
+    return view('registrarEmpleado');
+})->name('registrarEmpleado');
 
 Route::get('/administrador', function(){
     return view('administrador');
 })->name('administrador');
 
-Route::get('/registroMedicos', function () {
-    return view('registroMedicos');
-})->name('registroMedicos');
-
-Route::get('/registroSecretarias', function(){
-    return view('registroSecretarias');
-})->name('registroSecretarias');
+Route::get('/registrarAdmin', function () {
+    return view('registrarAdmin');
+})->name('registrarAdmin');
 
 Route::get('/secretaria', function () {
     return view('secretaria');
