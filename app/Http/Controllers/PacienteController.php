@@ -20,11 +20,10 @@ class PacienteController extends Controller {
         $paciente->peso = $request->peso;
         $paciente->genero = $request->genero;
         $paciente->alergias = $request->alergias;
-        $paciente->id_secretaria = "1";
 
         $paciente->save();
 
-        return redirect(route('secretaria'));
+        return redirect(route('registrarPacientes'));
     }
     
 }

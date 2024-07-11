@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre', 255);
+            $table->string('motivos');
+            $table->string('doctor');
+            $table->datetime('fechaHora');
+            $table->string('servicio')->nullable();
             $table->timestamps();
         });
     }

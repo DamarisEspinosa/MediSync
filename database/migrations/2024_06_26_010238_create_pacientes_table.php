@@ -19,9 +19,8 @@ return new class extends Migration
             $table->date('fechaNacimiento');
             $table->decimal('altura', 5, 2)->nullable();
             $table->decimal('peso', 5, 2)->nullable();
-            $table->enum('genero', ['Femenino', 'Masculino', 'Prefiero no especificar'])->default('Prefiero no especificar');
+            $table->string('genero');
             $table->string('alergias');
-            $table->unsignedBigInteger('id_secretaria'); // para saber quien registró al paciente 
             $table->timestamps();
         });
     }

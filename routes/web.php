@@ -6,6 +6,7 @@ use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\SecretariasController;
+use App\Http\Controllers\CitasController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,10 @@ Route::post('/registrar-pacientes', [PacienteController::class, 'registrarPacien
 Route::post('/registrar-empleado', [AdminController::class, 'registrarEmpleado'])->name('registrar-empleado');
 Route::post('/do-login', [AdminController::class, 'doLogin'])->name('do-login');
 Route::post('/registrar-admin', [AdminController::class, 'registrarAdmin'])->name('registrar-admin');
+Route::post('/registrar-cita', [CitasController::class, 'registrarCita'])->name('registrar-cita');
+
 Route::get('/do-logout',[AdminController::class,'logout'])->name('do-logout');
+
 
 // Vistas para navegación entre ventanas 
 Route::get('/registrarEmpleado', function () {
@@ -41,36 +45,36 @@ Route::get('/doctor', function () {
     return view('doctor');
 })->name('doctor');
 
-Route::get('/registroPacientes', function () {
-    return view('registroPacientes');
-})->name('registroPacientes');
+Route::get('/registrarPacientes', function () {
+    return view('registrarPacientes');
+})->name('registrarPacientes');
 
-Route::get('/registroCitas', function () {
-    return view('registroCitas');
-})->name('registroCitas');
+Route::get('/registrarCita', function () {
+    return view('registrarCita');
+})->name('registrarCita');
 
+Route::get('/agenda', function () {
+    return view('agenda');
+})->name('agenda');
 
+Route::get('/productos', function () {
+    return view('productos');
+})->name('productos');
+
+Route::get('/registrarProductos', function () {
+    return view('registrarProductos');
+})->name('registrarProductos');
+
+Route::get('/servicios', function () {
+    return view('servicios');
+})->name('servicios');
+
+Route::get('/registrarServicio', function () {
+    return view('registrarServicio');
+})->name('registrarServicio');
 
 ///////////
 
-
-
-
-Route::get('/pago', function () {
-    return view('pago');
-});
-
-Route::get('/detallesCita', function () {
-    return view('detallesCita');
-});
-
-Route::get('/detallesPacientes', function () {
-    return view('detallesPacientes');
-});
-
-Route::get('/expediente', function () {
-    return view('expediente');
-});
 
 
 

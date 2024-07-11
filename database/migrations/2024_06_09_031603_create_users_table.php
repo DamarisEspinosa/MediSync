@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Hash;
 
 class CreateUsersTable extends Migration
 {
@@ -26,6 +27,45 @@ class CreateUsersTable extends Migration
             $table->timestamps(); // Añade las columnas created_at y updated_at
             $table->rememberToken();
         });
+
+        DB::table('users')->insert([
+            [
+                'nombre' => 'Fabián Montes',
+                'fechaNacimiento' => '1990-07-13',
+                'telefono' => '834-123-4567',
+                'email' => 'fabianmontes@gmail.com',
+                'password' => Hash::make('12345678'),
+                'tipoUsuario' => 'doctor',
+                'especialidad' => 'Dermatología',
+                'area' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'nombre' => 'Damaris Espinosa',
+                'fechaNacimiento' => '1990-12-13',
+                'telefono' => '834-123-4567',
+                'email' => 'damarisespinosa@gmail.com',
+                'password' => Hash::make('12345678'),
+                'tipoUsuario' => 'admin',
+                'especialidad' => null,
+                'area' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'nombre' => 'Luisa García',
+                'fechaNacimiento' => '1990-07-13',
+                'telefono' => '834-123-4567',
+                'email' => 'luisagarcia@gmail.com	',
+                'password' => Hash::make('12345678'),
+                'tipoUsuario' => 'secretaria',
+                'especialidad' => null,
+                'area' => 'Laboratorios',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('correo')->primary();

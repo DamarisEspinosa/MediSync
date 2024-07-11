@@ -84,16 +84,12 @@
                         placeholder="Área"
                         class="mt-1 block w-full px-3 py-2 bg-transparent border-2 border-black rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                 </div>
-                <div class="col-span-2 flex justify-between mt-6">
+                <div class="col-span-2 flex justify-center">
                     <button type="submit"
                         style="margin-right: 16px;"
                         class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                         Registrar
                     </button>
-                    <a href=" {{ route('administrador') }} " 
-                        class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 ">
-                        Regresar
-                    </a>
                 </div>
             </form>
         </div>

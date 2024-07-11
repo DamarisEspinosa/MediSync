@@ -74,12 +74,25 @@ class AdminController extends Controller
         ];
 
         // Intentar autenticarse como Admin
-        
+        if(Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
+            // Buscamos al usuario por correo 
+            $usuario = User::where('email', $request->email)->firstOrFail();
+            if($usuario->tipoUsuario === 'admin') {
+                return redirect(route('administrador'));
+            } else if($usuario->tipoUsuario === 'doctor'){
+                return redirect(route('doctor'));
+            } else if($usuario->tipoUsuario === 'secretaria') {
+                return redirect(route('secretaria'));
+            }
+        } 
         // Si llega aquí, las credenciales no son válidas
-        return redirect(route('login'))->withErrors([
+        return redirect(route('login'));
+
+        /*return redirect(route('login'))->withErrors([
             'email' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
-        ]);
+        ]);*/
     }
 
 

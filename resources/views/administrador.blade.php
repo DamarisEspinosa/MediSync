@@ -5,9 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
-    <title>Registro Administrador</title>
+    <title>Administrador</title>
 </head>
-
 
 <body style="background: #EBEBE9; background-size: cover; background-position: center; height: 100vh; margin: 0; padding: 0;">
     <header class="flex justify-between items-center bg-opacity-75" style="background: #94B6E4; height: 70px;" >

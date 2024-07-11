@@ -23,8 +23,7 @@ class Paciente extends Model
         'altura',
         'peso',
         'genero',
-        'alergias',
-        'id_secretaria'
+        'alergias'
     ];
 
     /**
