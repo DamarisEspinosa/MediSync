@@ -7,6 +7,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\SecretariasController;
 use App\Http\Controllers\CitasController;
+use App\Http\Controllers\ProductosController;
+use App\Http\Controllers\ServiciosController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +22,8 @@ Route::post('/registrar-empleado', [AdminController::class, 'registrarEmpleado']
 Route::post('/do-login', [AdminController::class, 'doLogin'])->name('do-login');
 Route::post('/registrar-admin', [AdminController::class, 'registrarAdmin'])->name('registrar-admin');
 Route::post('/registrar-cita', [CitasController::class, 'registrarCita'])->name('registrar-cita');
+Route::post('/registrar-producto', [ProductosController::class, 'registrarProducto'])->name('registrar-producto');
+Route::get('/registrar-servicio', [ServiciosController::class, 'registrarServicio'])->name('registrar-servicio');
 
 Route::get('/do-logout',[AdminController::class,'logout'])->name('do-logout');
 

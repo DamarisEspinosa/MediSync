@@ -29,11 +29,11 @@
     <div class="flex items-center justify-center h-screen" style="margin-top: -5px;">
         <div class="bg-opacity-75 p-8 md:p-10 rounded-lg shadow-xl flex flex-col items-center w-full max-w-2xl" style="background: #CDD6FF;"> 
             <h2 class="text-3xl font-bold">Registro de servicio</h2>
-            <form class="mt-6 w-full grid grid-cols-2 gap-4" action=" # " method="POST">
+            <form class="mt-6 w-full grid grid-cols-2 gap-4" action=" {{ route('registrar-servicio') }} " method="POST">
                 @csrf
                 <div class="col-span-2">
-                    <label for="nombreProducto" class="block text-sm font-medium">Nombre del servicio</label>
-                    <input type="text" name="nombreProducto" id="nombreProducto"
+                    <label for="nombreServicio" class="block text-sm font-medium">Nombre del servicio</label>
+                    <input type="text" name="nombreServicio" id="nombreServicio"
                         placeholder="Nombre de producto"
                         class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         required>

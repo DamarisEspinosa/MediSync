@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Productos extends Model
+class Servicio extends Model
 {
     use HasFactory;
 
@@ -16,7 +16,8 @@ class Productos extends Model
      */
 
      protected $fillable = [
-        'nombreServicio',
+        'nombreProducto',
+        'cantidad',
         'precio'
     ];
 
@@ -36,6 +37,7 @@ class Productos extends Model
      * @return array<string, string>
      */
     protected $casts = [
+        'cantidad' => 'integer',
         'precio' => 'decimal:2',
     ];
 }

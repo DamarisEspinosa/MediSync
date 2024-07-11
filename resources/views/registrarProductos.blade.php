@@ -29,7 +29,7 @@
     <div class="flex items-center justify-center h-screen" style="margin-top: -5px;">
         <div class="bg-opacity-75 p-8 md:p-10 rounded-lg shadow-xl flex flex-col items-center w-full max-w-2xl" style="background: #CDD6FF;"> 
             <h2 class="text-3xl font-bold">Registro de productos</h2>
-            <form class="mt-6 w-full grid grid-cols-2 gap-4" action=" # " method="POST">
+            <form class="mt-6 w-full grid grid-cols-2 gap-4" action=" {{ route('registrar-producto') }} " method="POST">
                 @csrf
                 <div class="col-span-2">
                     <label for="nombreProducto" class="block text-sm font-medium">Nombre del producto</label>
