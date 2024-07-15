@@ -27,4 +27,20 @@ class CitasController extends Controller
 
         return redirect(route('registrarCita'));
     }
+
+    public function infoCitas () {
+        // Obtener solo los campos necesarios
+        $citas = Citas::all(['nombre', 'motivos', 'fechaHora']);
+        // Formatear los datos para que FullCalendar los entienda
+        $events = $citas->map(function ($cita) {
+            return [
+                'title' => $cita->nombre . ' - ' . $cita->motivos,
+                'start' => \Carbon\Carbon::parse($cita->fechaHora)->format('Y-m-d\TH:i:s'),
+                'description' => $cita->motivos,
+                'backgroundColor' => '#28a745', // Color verde para los eventos
+                'borderColor' => '#28a745'
+            ];
+        });
+        return response()->json($events);
+    }
 }

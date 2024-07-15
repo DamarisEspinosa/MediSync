@@ -15,11 +15,12 @@
             <h1 class="text-2xl font-bold">MediSync</h1>
         </div>
         <div class="px-4 py-2">
-            <a href=" {{ route('registrarPacientes') }} " class=" px-4 py-4 hover:text-white">Registrar paciente</a>
+            <a href=" {{ route('doctor') }} " class=" px-4 py-4 hover:text-white">Pacientes</a>
             <a href=" {{ route('registrarCita') }} " class=" px-4 py-4 hover:text-white">Registrar cita</a>
             <a href=" {{ route('agenda') }} " class=" px-4 py-4 hover:text-white">Agenda</a>
             <a href=" {{ route('productos') }} " class=" px-4 py-4 hover:text-white">Productos</a> 
             <a href=" {{ route('servicios') }} " class=" px-4 py-4 hover:text-white">Servicios</a> 
+            <a href=" {{ route('ventas') }} " class=" px-4 py-4 hover:text-white">Ventas</a> 
         </div>
         <div style="padding: 10px 20px;">
             <a href=" {{ route('do-logout') }} " class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Cerrar sesión</a>
@@ -47,8 +48,8 @@
                     <label for="doctor" class="block text-sm font-medium">Doctor</label>
                     <select name="doctor" id="doctor"
                         class="mt-1 block w-full px-3 py-2 bg-transparent border-2 border-black rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                        <option value="Damaris">Damaris</option>
-                        <option value="Luisana">Luisana</option>
+                        <option value="sin-elegir">Seleccionar doctor</option>
+                        <option value="1">Fabián</option>
                     </select>
                 </div>
                 <div>
@@ -57,7 +58,6 @@
                         class="mt-1 block w-full px-3 py-2 bg-transparent border-2 border-black rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                         required>
                 </div>
-                <!-- REVISAR - radio -->
                 <div>
                     <label class="block text-sm font-medium">¿Desea agregar un servicio?</label>
                     <input type="radio" name="servicio" id="agregar" value="agregar"><label for="agregar"> Sí</label><br>
@@ -67,15 +67,12 @@
                     <label for="servicio" class="block text-sm font-medium">Tipo de servicio</label><br>
                     <select name="servicio" id="servicio"
                         class="mt-1 block w-full px-3 py-2 bg-transparent border-2 border-black rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-                        <option value=""></option>
-                        <option value="laboratorio">Laboratorio</option>
-                        <option value="extraccion">Extracción de muela</option>
-                        <option value="cirugia">Cirugía</option>
-                        <option value="farmacia">Farmacia</option>
+                        <option value="sin-elegir">Seleccionar servicio</option>
+                        @foreach($servicios as $servicio)
+                            <option value=" {{ $servicio->id }} "> {{ $servicio->nombreServicio }} </option>
+                        @endforeach
                     </select>
                 </div>
-                
-
                 <div class="col-span-2 flex justify-center">
                     <button type="submit"
                         style="margin-right: 16px;" 
@@ -86,7 +83,6 @@
             </form>
         </div>
     </div>
-    <!--js-->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const radioSi = document.getElementById('agregar');

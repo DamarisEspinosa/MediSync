@@ -4,11 +4,17 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\SecretariasController;
 use App\Http\Controllers\CitasController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ServiciosController;
+use App\Http\Controllers\DoctorController;
+
+// modelos para regresar los datos en las vistas 
+use App\Models\Paciente;
+use App\Models\Productos;
+use App\Models\Servicios;
+use App\Models\Medico;
 
 use Illuminate\Support\Facades\Route;
 
@@ -23,9 +29,11 @@ Route::post('/do-login', [AdminController::class, 'doLogin'])->name('do-login');
 Route::post('/registrar-admin', [AdminController::class, 'registrarAdmin'])->name('registrar-admin');
 Route::post('/registrar-cita', [CitasController::class, 'registrarCita'])->name('registrar-cita');
 Route::post('/registrar-producto', [ProductosController::class, 'registrarProducto'])->name('registrar-producto');
-Route::get('/registrar-servicio', [ServiciosController::class, 'registrarServicio'])->name('registrar-servicio');
+Route::post('/registrar-servicio', [ServiciosController::class, 'registrarServicio'])->name('registrar-servicio');
 
 Route::get('/do-logout',[AdminController::class,'logout'])->name('do-logout');
+Route::get('/info-citas', [CitasController::class, 'infoCitas'])->name('info-citas');
+Route::get('/productos', [ProductosController::class, 'index'])->name('productos');
 
 
 // Vistas para navegación entre ventanas 
@@ -46,7 +54,8 @@ Route::get('/secretaria', function () {
 })->name('secretaria');
 
 Route::get('/doctor', function () {
-    return view('doctor');
+    $pacientes = Paciente::all(); 
+    return view('doctor', compact('pacientes')); 
 })->name('doctor');
 
 Route::get('/registrarPacientes', function () {
@@ -54,7 +63,8 @@ Route::get('/registrarPacientes', function () {
 })->name('registrarPacientes');
 
 Route::get('/registrarCita', function () {
-    return view('registrarCita');
+    $servicios = Servicios::all();
+    return view('registrarCita', compact('servicios'));
 })->name('registrarCita');
 
 Route::get('/agenda', function () {
@@ -62,7 +72,8 @@ Route::get('/agenda', function () {
 })->name('agenda');
 
 Route::get('/productos', function () {
-    return view('productos');
+    $productos = Productos::all();
+    return view('productos', compact('productos'));
 })->name('productos');
 
 Route::get('/registrarProductos', function () {
@@ -70,12 +81,22 @@ Route::get('/registrarProductos', function () {
 })->name('registrarProductos');
 
 Route::get('/servicios', function () {
-    return view('servicios');
+    $servicios = Servicios::all();
+    return view('servicios', compact('servicios'));
 })->name('servicios');
 
 Route::get('/registrarServicio', function () {
     return view('registrarServicio');
 })->name('registrarServicio');
+
+Route::get('/ventas', function() {
+    return view('ventas');
+})->name('ventas');
+
+Route::get('/venderProducto', function() {
+    $productos = Productos::all();
+    return view('venderProducto', compact('productos'));
+})->name('venderProducto');
 
 ///////////
 

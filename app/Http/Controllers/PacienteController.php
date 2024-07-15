@@ -23,7 +23,7 @@ class PacienteController extends Controller {
 
         $paciente->save();
 
-        return redirect(route('registrarPacientes'));
+        return redirect(route('doctor'));
     }
     
 }

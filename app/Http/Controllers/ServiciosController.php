@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Servicio;
+use App\Models\Servicios;
 
 class ServiciosController extends Controller
 {
     public function registrarServicio (Request $request) {
-        $servicio = new Servicio();
+        $servicio = new Servicios();
 
         $servicio->nombreServicio = $request->nombreServicio;
         $servicio->precio = $request->precio;
 
-        $servicio->sabe();
+        $servicio->save();
 
-        return redirect(route('registrarServicio'));
+        return redirect(route('servicios'));
     }
 }

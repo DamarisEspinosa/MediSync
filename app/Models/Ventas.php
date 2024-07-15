@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Paciente extends Model
+class ventas extends Model
 {
     use HasFactory;
 
@@ -15,15 +15,12 @@ class Paciente extends Model
      * @var array<int, string>
      */
 
-    protected $fillable = [
-        'nombre',
-        'email',
-        'telefono',
-        'fechaNacimiento',
-        'altura',
-        'peso',
-        'genero',
-        'alergias'
+     protected $fillable = [
+        'fechaVenta',
+        'producto',
+        'cantidadVendida', 
+        'precioUnitario',
+        'total'
     ];
 
     /**
@@ -42,10 +39,9 @@ class Paciente extends Model
      * @return array<string, string>
      */
     protected $casts = [
-        'fechaNacimiento' => 'date',
-        'edad' => 'integer',
-        'altura' => 'decimal:2',
-        'peso' => 'decimal:2'
+        'fechaVenta' => 'date',
+        'cantidadVendida' => 'integer',
+        'precioUnitario' => 'decimal:2',
+        'total' => 'decimal:2',
     ];
-    
 }

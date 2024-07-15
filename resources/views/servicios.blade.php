@@ -15,11 +15,12 @@
             <h1 class="text-2xl font-bold">MediSync</h1>
         </div>
         <div class="px-4 py-2">
-            <a href=" {{ route('registrarPacientes') }} " class=" px-4 py-4 hover:text-white">Registrar paciente</a>
+            <a href=" {{ route('doctor') }} " class=" px-4 py-4 hover:text-white">Pacientes</a>
             <a href=" {{ route('registrarCita') }} " class=" px-4 py-4 hover:text-white">Registrar cita</a>
             <a href=" {{ route('agenda') }} " class=" px-4 py-4 hover:text-white">Agenda</a>
             <a href=" {{ route('productos') }} " class=" px-4 py-4 hover:text-white">Productos</a> 
             <a href=" {{ route('servicios') }} " class=" px-4 py-4 hover:text-white">Servicios</a> 
+            <a href=" {{ route('ventas') }} " class=" px-4 py-4 hover:text-white">Ventas</a> 
         </div>
         <div style="padding: 10px 20px;">
             <a href=" {{ route('do-logout') }} " class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Cerrar sesión</a>
@@ -49,11 +50,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($servicios as $servicio)
                     <tr>
-                        <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap">Radiografía</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center">$200</td>
-                        <td class="py-2 px-4 border-b border-gray-300 text-center">Modificar</td>
+                        <td class="py-2 px-4 border-b border-gray-300 whitespace-nowrap"> {{ $servicio->nombreServicio }} </td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"> {{ $servicio->precio }} </td>
+                        <td class="py-2 px-4 border-b border-gray-300 text-center"> - </td>
                     </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

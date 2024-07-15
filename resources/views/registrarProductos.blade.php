@@ -15,11 +15,12 @@
             <h1 class="text-2xl font-bold">MediSync</h1>
         </div>
         <div class="px-4 py-2">
-            <a href=" {{ route('registrarPacientes') }} " class=" px-4 py-4 hover:text-white">Registrar paciente</a>
+            <a href=" {{ route('doctor') }} " class=" px-4 py-4 hover:text-white">Pacientes</a>
             <a href=" {{ route('registrarCita') }} " class=" px-4 py-4 hover:text-white">Registrar cita</a>
             <a href=" {{ route('agenda') }} " class=" px-4 py-4 hover:text-white">Agenda</a>
             <a href=" {{ route('productos') }} " class=" px-4 py-4 hover:text-white">Productos</a> 
             <a href=" {{ route('servicios') }} " class=" px-4 py-4 hover:text-white">Servicios</a> 
+            <a href=" {{ route('ventas') }} " class=" px-4 py-4 hover:text-white">Ventas</a> 
         </div>
         <div style="padding: 10px 20px;">
             <a href=" {{ route('do-logout') }} " class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600">Cerrar sesión</a>

@@ -17,6 +17,11 @@ class ProductosController extends Controller
 
         $producto->save();
 
-        return redirect(route('registrarProductos'));
+        return redirect(route('productos'));
+    }
+
+    public function index () {
+        $productos = Productos::all(); 
+        return view('productos', compact('productos')); 
     }
 }
