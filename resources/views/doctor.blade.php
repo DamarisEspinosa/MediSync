@@ -80,8 +80,9 @@
                         </select>
                     </div>
                     <div class="mb-4">
-                        <label for="appointment-reason" class="block text-sm font-medium text-gray-700">Motivo de la
-                            cita</label>
+                        <label for="appointment-reason" class="block text-sm font-medium text-gray-700">
+                            Motivo de la cita
+                        </label>
                         <input type="text" id="motivos" name="motivos"
                             class="mt-1 p-2 block w-full border border-gray-300 rounded-md">
                     </div>

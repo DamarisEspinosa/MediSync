@@ -27,18 +27,6 @@ class CreateUsersTable extends Migration
         });
 
         DB::table('users')->insert([
-            /*[
-                'nombre' => 'Damaris Espinosa',
-                'fechaNacimiento' => '1990-12-13',
-                'telefono' => '834-123-4567',
-                'email' => 'damarisespinosa@gmail.com',
-                'password' => Hash::make('12345678'),
-                'tipoUsuario' => 'admin',
-                'especialidad' => null,
-                'area' => null,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]*/
             [
                 'nombre' => 'Damaris',
                 'apellidos' => 'Espinosa',
