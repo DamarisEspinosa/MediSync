@@ -30,8 +30,8 @@
         </div>
     </header>
 
-        <div class="flex items-center justify-center w-3/4 ml-auto">
-            <div class="bg-white bg-opacity-10 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-sm">
+        <div class="flex items-center justify-center mt-5 mb-5">
+            <div class="bg-[#94B6E4] bg-opacity-50 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-md">
                 <div class="my-4">
                     @session('succes')
                         <div class="alert alert-success" role="alert">
@@ -74,7 +74,7 @@
                     </fieldset>
                     <div class="flex-grow flex items-center justify-center mt-3">
                         <button type="submit"
-                            class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                             Registrar
                         </button>
                     </div>

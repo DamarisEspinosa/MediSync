@@ -58,7 +58,7 @@
         </div>
     </header>
         <div class="flex-1 flex flex-col p-6">
-            <div class="flex justify-between mt-6 items-center">
+            <div class="flex flex-col mt-6 items-center">
                 <div class="relative w-2/3 max-w-2xl">
                     <input type="text" placeholder="Buscar"
                         class="w-full py-2 pl-4 pr-10 border border-blue-500 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 search-input">
@@ -66,24 +66,21 @@
                             d="M21 21l-4.35-4.35M16.44 11.2a5.45 5.45 0 11-10.89 0 5.45 5.45 0 0110.89 0z" />
                     </svg>
                 </div>
-                <a href="/registroPacientesDoc" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-                    Agregar pacientes
-                </a>
             </div>
             <div class="overflow-x-auto mt-6">
                 <table class="min-w-full bg-white bg-opacity-10 rounded-lg shadow-xl">
                     <thead>
                         <tr class="bg-[#94B6E4]">
-                            <th class="py-2 px-4 text-left">Nombre</th>
-                            <th class="py-2 px-4 text-left">Correo</th>
-                            <th class="py-2 px-4 text-center">Próxima cita</th>
-                            <th class="py-2 px-4 text-center">Operaciones</th>
+                            <th class="py-2 px-4 text-left border-2">Nombre</th>
+                            <th class="py-2 px-4 text-left border-2">Correo</th>
+                            <th class="py-2 px-4 text-center border-2">Próxima cita</th>
+                            <th class="py-2 px-4 text-center border-2">Opciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         @if (isset($pacientes))
                             @foreach ($pacientes as $paciente)
-                                <tr class="hover:bg-blue-600">
+                                <tr>
                                     <td class="py-2 px-4">{{ $paciente->nombre }}</td>
                                     <td class="py-2 px-4">{{ $paciente->correo }}</td>
                                     <td class="py-2 px-4 text-center">
@@ -94,21 +91,25 @@
                                         @endif
                                     </td>
                                     <td class="py-2 px-4 text-center">
-                                        <a href="/detallesPacientes/{{ $paciente->id }}"
-                                           class="text-purple-600 w-20 mr-2">
-                                            Ver detalles
-                                        </a>
-                                        <a href="{{ route('pacientesDoc.edit', $paciente->id) }}"
-                                           class="text-purple-600 w-20 mr-2">
-                                            Modificar
-                                        </a>
-                                        <form action="{{ route('docPacientes.destroy', $paciente->id) }}"
-                                            method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit"
-                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Eliminar</button>
-                                        </form>
+                                        <div class=" flex flex-row justify-center w-full">
+                                            <a href="/detallesPacientes/{{ $paciente->id }}"
+                                                class="w-10">
+                                                    <img src="img/detalles.png" width="23" height="23">
+                                            </a>
+                                            <a href="{{ route('pacientesDoc.edit', $paciente->id) }}"
+                                                class="w-10">
+                                                    <img src="img/editar.png" width="20" height="20">
+                                            </a>
+                                            <form action="{{ route('docPacientes.destroy', $paciente->id) }}"
+                                                method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"
+                                                    class="w-10">
+                                                    <img src="img/eliminar2.png" width="18" height="18">
+                                                </button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
@@ -116,6 +117,11 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div class="w-full flex flex-col items-center">
+            <a href="/registroPacientesDoc" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                Agregar pacientes
+            </a>
         </div>
     </div>
 </body>

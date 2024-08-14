@@ -20,6 +20,7 @@
             <a href="/docServicios" class=" px-4 py-4 hover:text-white">Servicios</a>
             <a href="/docProductos" class=" px-4 py-4 hover:text-white">Productos</a>
             <a href="/docIngresos" class=" px-4 py-4 hover:text-white">Ingresos</a>
+            <a href="/ventas" class=" px-4 py-4 hover:text-white">Ventas</a>
         </div>
         <div class="px-3 py-3 flex flex-row items-center">
             <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">

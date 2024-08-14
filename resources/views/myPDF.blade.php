@@ -6,6 +6,6 @@
     <title>My pdf</title>
 </head>
 <body>
-    Aquí se debe acomodar el PDF 
+    Aquí se debe acomodar el PDF y esto es lo que se mostrará
 </body>
 </html>

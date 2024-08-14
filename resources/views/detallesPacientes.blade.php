@@ -11,7 +11,7 @@
 <body class="bg-[#EBEBE9]">
     <header class="flex justify-between items-center bg-opacity-75 bg-[#94B6E4]" style="height: 70px;">
         <div class=" flex flex-row items-center" style="padding: 10px 20px;">
-            <img src="img/logo-login.png" width="50" height="50"> 
+            <img src="../img/logo-login.png" width="50" height="50"> 
             <h1 class="text-2xl font-bold">MediSync</h1>
         </div>
         <div class="px-4 py-2">
@@ -23,14 +23,14 @@
         </div>
         <div class="px-3 py-3 flex flex-row items-center">
             <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">
-                <img src="img/cerrar-sesion.png" class="mr-2" height="25" width="25">
+                <img src="../img/cerrar-sesion.png" class="mr-2" height="25" width="25">
                 Cerrar sesión
             </a>
         </div>
     </header>
 
         <div class="flex items-center justify-center mt-5 mb-5">
-            <div class="bg-[#94B6E4] bg-opacity-50 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-md">
+            <div class="bg-[#94B6E4] bg-opacity-50 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-5xl">
                 <h2 class="text-3xl font-bold text-center mb-4">Detalles del paciente</h2>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="mb-2">
@@ -77,7 +77,9 @@
                     </div>
                     <div class="mb-2">
                         <label class="block font-medium">Alergias</label>
-                        <p class="text-gray-900">{{ $paciente->alergias }}</p>
+                        <p class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            {{ $paciente->alergias }}
+                        </p>
                     </div>
                     <div class="mb-2">
                         <label class="block font-medium">Teléfono</label>
@@ -93,7 +95,7 @@
                     </div>
                 </div>
                 <div class="flex justify-center mt-6">
-                    <a href="#" class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    <a href="#" class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                         Ver expediente
                     </a>
                 </div>
