@@ -106,9 +106,14 @@
                 </table>
             </div>
         </div>
-        <div class="w-full flex flex-col items-center">
-            <a href="/crearProducto" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        <div class="w-full flex flex-row justify-center">
+            <a href="/crearProducto" 
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-4">
                 Agregar producto
+            </a>
+            <a href="/ventas" 
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full ml-4">
+                Vender producto
             </a>
         </div>
     </div>

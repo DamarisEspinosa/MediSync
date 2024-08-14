@@ -20,7 +20,6 @@
             <a href="/docServicios" class=" px-4 py-4 hover:text-white">Servicios</a>
             <a href="/docProductos" class=" px-4 py-4 hover:text-white">Productos</a>
             <a href="/docIngresos" class=" px-4 py-4 hover:text-white">Ingresos</a>
-            <a href="/ventas" class=" px-4 py-4 hover:text-white">Ventas</a>
         </div>
         <div class="px-3 py-3 flex flex-row items-center">
             <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">
@@ -91,13 +90,13 @@
                         <div class="mb-4">
                             <label for="total_pago">Pago total</label>
                             <span id="total_pago"
-                                class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                                class="mt-1 block w-full h-10 px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                 style="cursor: default;"></span>
                         </div>
                     </fieldset>
                     <div class="flex-grow flex items-center justify-center mt-3">
                         <button type="submit"
-                            class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                             Vender
                         </button>
                     </div>

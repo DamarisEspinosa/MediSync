@@ -68,10 +68,10 @@
             <div class="overflow-x-auto mt-6">
                 
                 @foreach ($ingresos as $fecha => $data)
-                    <h2 class="text-2xl font-bold text-white mb-4 mt-6">{{ $fecha }}</h2>
+                    <h2 class="text-2xl font-bold text-black mb-4 mt-6">{{ $fecha }}</h2>
                     <table class="min-w-full bg-white bg-opacity-10 rounded-lg shadow-xl text-white mb-6">
                         <thead>
-                            <tr class="bg-blue-500">
+                            <tr class="bg-[#94B6E4] text-black">
                                 <th class="py-2 px-4 text-left">Cliente</th>
                                 <th class="py-2 px-4 text-left">Venta del servicio independiente</th>
                                 <th class="py-2 px-4 text-left">Venta de la cita</th>
@@ -79,7 +79,7 @@
                         </thead>
                         <tbody>
                             @foreach ($data['ventas'] as $venta)
-                                <tr class="hover:bg-blue-600">
+                                <tr class="text-black">
                                     <td class="py-2 px-4 fecha-dia" style="display:none;">{{ $fecha }}</td>
                                     <td class="py-2 px-4">{{ $venta->paciente->nombre }}</td>
                                     <td class="py-2 px-4">{{ $venta->total_pago }}</td>
@@ -87,7 +87,7 @@
                                 </tr>
                             @endforeach
                             @foreach ($data['citas'] as $cita)
-                                <tr class="hover:bg-blue-600">
+                                <tr class="text-black">
                                     <td class="py-2 px-4 fecha-dia" style="display:none;">{{ $fecha }}</td>
                                     <td class="py-2 px-4">{{ $cita->paciente->nombre }}</td>
                                     <td class="py-2 px-4">-</td>
@@ -96,7 +96,7 @@
                             @endforeach
                         </tbody>
                         <tfoot>
-                            <tr class="bg-blue-500">
+                            <tr class="bg-[#94B6E4] text-black">
                                 <td class="py-2 px-4 font-bold" colspan="2">Total del Día</td>
                                 <td class="py-2 px-4 font-bold">{{ $data['totalDia'] }}</td>
                             </tr>
