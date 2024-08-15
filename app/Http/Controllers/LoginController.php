@@ -52,7 +52,8 @@ class LoginController extends Controller
         $paciente = Paciente::where('correo', $credentials['correo'])->first();
         if ($paciente && Hash::check($credentials['password'], $paciente->password)) {
             $request->session()->regenerate();
-            return redirect(route('paciente.perfil')); 
+            return $paciente;
+            //return redirect(route('paciente.perfil')); 
         }
 
          $doctor = Doctor::where('correo', $credentials['correo'])->first();

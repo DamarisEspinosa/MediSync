@@ -27,17 +27,15 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <p><span class="font-semibold">Nombre(s):</span> {{ $paciente->nombre }}</p>
-                        <p><span class="font-semibold">Edad:</span> {{ $paciente->edad }}</p>
-                        <p><span class="font-semibold">Altura:</span> {{ $paciente->altura }}</p>
-                        <p><span class="font-semibold">Enfermedades que padece:</span> {{ $paciente->enfermedades ?: 'N/A' }}</p>
-                        <p><span class="font-semibold">Teléfono:</span> {{ $paciente->telefono }}</p>
-                    </div>
-                    <div>
                         <p><span class="font-semibold">Apellido(s):</span> {{ $paciente->apellidos }}</p>
+                        <p><span class="font-semibold">Edad:</span> {{ $paciente->edad }}</p>
                         <p><span class="font-semibold">Género:</span> {{ $paciente->genero }}</p>
-                        <p><span class="font-semibold">Peso:</span> {{ $paciente->peso }}</p>
-                        <p><span class="font-semibold">Alergias:</span> {{ $paciente->alergias ?: 'N/A' }}</p>
+                        <p><span class="font-semibold">Teléfono:</span> {{ $paciente->telefono }}</p>
                         <p><span class="font-semibold">Correo:</span> {{ $paciente->correo }}</p>
+                        <p><span class="font-semibold">Altura:</span> {{ $paciente->altura }}</p>
+                        <p><span class="font-semibold">Peso:</span> {{ $paciente->peso }}</p>
+                        <p><span class="font-semibold">Enfermedades:</span> {{ $paciente->enfermedades ?: 'N/A' }}</p>
+                        <p><span class="font-semibold">Alergias:</span> {{ $paciente->alergias ?: 'N/A' }}</p>
                     </div>
                 </div>
             </div>

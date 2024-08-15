@@ -11,7 +11,7 @@
 <body class="bg-[#EBEBE9]">
     <header class="flex justify-between items-center bg-opacity-75 bg-[#94B6E4]" style="height: 70px;">
         <div class=" flex flex-row items-center" style="padding: 10px 20px;">
-            <img src="img/logo-login.png" width="50" height="50"> 
+            <img src="../img/logo-login.png" width="50" height="50"> 
             <h1 class="text-2xl font-bold">MediSync</h1>
         </div>
         <div class="px-4 py-2">
@@ -23,7 +23,7 @@
         </div>
         <div class="px-3 py-3 flex flex-row items-center">
             <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">
-                <img src="img/cerrar-sesion.png" class="mr-2" height="25" width="25">
+                <img src="../img/cerrar-sesion.png" class="mr-2" height="25" width="25">
                 Cerrar sesión
             </a>
         </div>

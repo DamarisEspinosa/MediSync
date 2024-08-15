@@ -72,9 +72,9 @@
                     <thead>
                         <tr class="bg-[#94B6E4]">
                             <th class="py-2 px-4 text-left border-2">Nombre</th>
-                            <th class="py-2 px-4 text-left border-2">Marca</th>
-                            <th class="py-2 px-4 text-left border-2">Costo</th>
-                            <th class="py-2 px-4 text-left border-2">Cantidad</th>
+                            <th class="py-2 px-4 text-center border-2">Marca</th>
+                            <th class="py-2 px-4 text-center border-2">Costo</th>
+                            <th class="py-2 px-4 text-center border-2">Cantidad</th>
                             <th class="py-2 px-4 text-center border-2">Opciones</th>
                         </tr>
                     </thead>
@@ -83,12 +83,12 @@
                             @foreach ($productos as $producto)
                                 <tr>
                                     <td class="py-2 px-4">{{ $producto->nombre}}</td>
-                                    <td class="py-2 px-4">{{ $producto->marca}}</td>
-                                    <td class="py-2 px-4">{{ $producto->costo}}</td>
-                                    <td class="py-2 px-4">{{ $producto->cantidad}}</td>
+                                    <td class="py-2 px-4 text-center">{{ $producto->marca}}</td>
+                                    <td class="py-2 px-4 text-center">${{ $producto->costo}}</td>
+                                    <td class="py-2 px-4 text-center">{{ $producto->cantidad}}</td>
                                     <td class="py-2 px-4 text-center">
                                         <form action="{{ route('Productos.edit', $producto->id) }}" method="get">
-                                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            <button type="submit">
                                                 <img src="img/editar.png" width="20" height="20">
                                             </button>
                                         </form>
@@ -102,7 +102,7 @@
         </div>
         <div class="w-full flex flex-row justify-center">
             <a href="/registrarProducto" 
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                class="mr-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
                 Agregar producto
             </a>
             <a href="/vender" 

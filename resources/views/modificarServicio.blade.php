@@ -8,55 +8,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gradient-to-r from-[#4CA9DF] to-[#292E91]">
-    <div class="flex h-screen">
-        <div class="bg-blue-650 text-white w-1/5 p-6 flex flex-col justify-between shadow-xl">
-            <div>
-                <div class="flex items-center mb-8">
-                    <img src="{{ asset('img/logo.png') }}" alt="Logo" class="w-8 h-8 mr-2">
-                    <span class="text-2xl font-bold">Salud Conecta</span>
-                </div>
-                <ul>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/calendario.png') }}"  alt="Agenda Icon" class="w-6 h-6 mr-2">
-                        <a href="/recepcionista" class="text-lg">Agenda</a>
-                    </li>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/calendario.png') }}" alt="Agregar servicio Icon" class="w-6 h-6 mr-2">
-                        <a href="/servicios" class="text-lg">Agregar servicio</a>
-                    </li>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/calendario.png') }}" alt="Agregar paciente Icon" class="w-6 h-6 mr-2">
-                        <a href="/registroPacientes" class="text-lg">Agregar paciente</a>
-                    </li>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/calendario.png') }}" alt="Agregar paciente Icon" class="w-6 h-6 mr-2">
-                        <a href="/registrarProducto" class="text-lg">Agregar producto</a>
-                    </li>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/usuario.png') }}" alt="Ver pacientes Icon" class="w-6 h-6 mr-2">
-                        <a href="/verServicios" class="text-lg">Ver servicios</a>
-                    </li>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/usuario.png') }}" alt="Ver pacientes Icon" class="w-6 h-6 mr-2">
-                        <a href="/verPacientes" class="text-lg">Ver pacientes</a>
-                    </li>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/usuario.png') }}" alt="Ver pacientes Icon" class="w-6 h-6 mr-2">
-                        <a href="/Productos" class="text-lg">Ver productos</a>
-                    </li>
-                </ul>
-            </div>
-            <button
-                class="w-full flex justify-center py-2 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                onclick="location.href='/'">
-                Cerrar sesión
-            </button>
+<body class="bg-[#EBEBE9]">
+    <header class="flex justify-between items-center bg-opacity-75 bg-[#94B6E4]" style="height: 70px;">
+        <div class=" flex flex-row items-center px-3 py-3">
+            <img src="img/logo-login.png" width="50" height="50"> 
+            <h1 class="text-2xl font-bold">MediSync</h1>
         </div>
+        <div class="px-4 py-2">
+            <a href="/recepcionista" class=" px-4 py-4 hover:text-white">Agenda</a>
+            <a href="/verServicios" class=" px-4 py-4 hover:text-white">Servicios</a>
+            <a href="/verPacientes" class=" px-4 py-4 hover:text-white">Pacientes</a>
+            <a href="/Productos" class=" px-4 py-4 hover:text-white">Productos</a>
+        </div>
+        <div class="px-3 py-3 flex flex-row items-center">
+            <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">
+                <img src="img/cerrar-sesion.png" class="mr-2" height="25" width="25">
+                Cerrar sesión
+            </a>
+        </div>
+    </header>
 
-        <div class="flex items-center justify-center w-3/4 ml-auto">
-            <div class="bg-white bg-opacity-10 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-sm">
-                <h2 class="text-3xl font-bold text-white text-center mb-6">Modificar Servicio</h2>
+    <div class="flex items-center justify-center mt-5 mb-5">
+            <div class="bg-[#94B6E4] bg-opacity-50 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-md">
+                <h2 class="text-3xl font-bold text-center mb-6">Modificar Servicio</h2>
                 @if(session('success'))
                     <div class="bg-green-500 text-white p-4 rounded mb-4">
                         {{ session('success') }}
@@ -65,50 +39,33 @@
                 <form action="{{ route('verServicios.update', $servicio->id) }}" method="POST">
                     @csrf
                     @method('PUT')
-                    <div class="mb-4 flex items-center bg-white bg-opacity-20 rounded-md shadow-sm">
-                        <img src="{{ asset('img/user.png') }}" alt="Nombre Icon" class="w-6 h-6 ml-2">
+                    <div class="mb-4">
+                        <label for="nombre">Nombre</label>
                         <input type="text" name="nombre" id="nombre" value="{{ $servicio->nombre }}"
-                            class="flex-grow px-3 py-2 bg-transparent border-none rounded-md focus:outline-none focus:ring-0 text-white placeholder-white"
+                            class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                             placeholder="Nombre del servicio" required>
                     </div>
                     @error('nombre')
                     <div class="bg-red-500 text-white p-2 rounded mb-4">{{ $message }}</div>
                     @enderror
-                    <div class="mb-4 flex items-center bg-white bg-opacity-20 rounded-md shadow-sm">
-                        <img src="{{ asset('img/user.png') }}" alt="Costo Icon" class="w-6 h-6 ml-2">
+                    <div class="mb-4">
+                        <label for="precio">Precio</label>
                         <input type="number" name="precio" id="precio" value="{{ $servicio->precio }}"
-                            class="flex-grow px-3 py-2 bg-transparent border-none rounded-md focus:outline-none focus:ring-0 text-white placeholder-white"
+                            class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                             placeholder="Costo" required>
                     </div>
                     @error('precio')
                     <div class="bg-red-500 text-white p-2 rounded mb-4">{{ $message }}</div>
                     @enderror
-                    <div class="mb-4 flex items-center bg-white bg-opacity-20 rounded-md shadow-sm">
-                        <img src="{{ asset('img/calendarioyhora.png') }}"  alt="calendario Icon" class="w-6 h-6 ml-2">
-                        <input type="text" name="duracion" id="duracion" value="{{ $servicio->duracion }}"
-                            class="flex-grow px-3 py-2 bg-transparent border-none rounded-md focus:outline-none focus:ring-0 text-white placeholder-white"
-                            placeholder="Duración del servicio" required>
-                    </div>
-                    @error('duracion')
-                    <div class="bg-red-500 text-white p-2 rounded mb-4">{{ $message }}</div>
-                    @enderror
                     <div class="flex-grow flex items-center justify-center mt-6">
                         <button type="submit"
-                            class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                             Actualizar
                         </button>
                     </div>
-                    <div class="flex-grow flex items-center justify-center mt-3">
-                        <button type="button"
-                            class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" onclick="location.href='/verServicios'">
-                            Regresar
-                        </button>
-                    </div>
                 </form>
-                
             </div>
         </div>
-    </div>
 </body>
 
 </html>

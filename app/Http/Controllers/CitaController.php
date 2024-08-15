@@ -15,7 +15,7 @@ class CitaController extends Controller
     public function index()
     {
         $citas = Citas::with('servicio')->get();
-        return view('secretaria', [
+        return view('recepcionista', [
             'pacientes' => Paciente::latest()->get(),
             'servicios' => Servicio::latest()->get(),
             'citas' => $citas,
@@ -29,13 +29,13 @@ class CitaController extends Controller
             ->first();
 
         if ($existingCita) {
-            return redirect()->route('secretaria.index')
+            return redirect()->route('recepcionista.index')
                 ->with('error', 'Ya existe una cita registrada en la misma fecha y hora.');
         }
 
         Citas::create($request->validated());
 
-        return redirect()->route('secretaria.index')->with('success', 'Cita registrada correctamente');
+        return redirect()->route('recepcionista.index')->with('success', 'Cita registrada correctamente');
     }
 
 

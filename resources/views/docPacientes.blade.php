@@ -85,7 +85,7 @@
                                     <td class="py-2 px-4">{{ $paciente->correo }}</td>
                                     <td class="py-2 px-4 text-center">
                                         @if($paciente->citas->isNotEmpty())
-                                            {{ $paciente->citas->first()->fecha->format('d/m/Y') }} a las {{ $paciente->citas->first()->formatted_hora }}
+                                            {{ $paciente->citas->first()->fecha->format('d/m/Y') }} | {{ $paciente->citas->first()->formatted_hora }}
                                         @else
                                             Sin citas próximas
                                         @endif

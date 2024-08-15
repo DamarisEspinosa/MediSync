@@ -82,10 +82,10 @@
                             @foreach ($servicios as $servicio)
                                 <tr>
                                     <td class="py-2 px-4">{{ $servicio->nombre }}</td>
-                                    <td class="py-2 px-4">{{ $servicio->precio }}</td>
+                                    <td class="py-2 px-4 text-center">${{ $servicio->precio }}</td>
                                     <td class="py-2 px-4 flex flex-row justify-center w-full">
                                         <form action="{{ route('verServicios.edit', $servicio->id) }}" method="get">
-                                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                                            <button type="submit">
                                                 <img src="img/editar.png" width="20" height="20">
                                             </button>
                                         </form>

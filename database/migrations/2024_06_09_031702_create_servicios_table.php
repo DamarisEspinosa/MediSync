@@ -17,7 +17,6 @@ class CreateServiciosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->decimal('precio', 10, 2); 
-            $table->unsignedInteger('duracion')->nullable(); 
             $table->timestamps();
         });
     }

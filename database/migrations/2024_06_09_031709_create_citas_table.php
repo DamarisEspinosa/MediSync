@@ -18,7 +18,7 @@ class CreateCitasTable extends Migration
             $table->string('motivos');
             $table->date('fecha');
             $table->time('hora');
-            $table->string('estado')->nullable();  
+            $table->string('estado')->nullable(); 
             $table->unsignedBigInteger('id_paciente');  
             $table->unsignedBigInteger('id_servicio');  
             $table->string('medicamentos')->nullable();

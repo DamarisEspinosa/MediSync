@@ -47,8 +47,11 @@
             <a href="/docProductos" class=" px-4 py-4 hover:text-white">Productos</a>
             <a href="/docIngresos" class=" px-4 py-4 hover:text-white">Ingresos</a>
         </div>
-        <div style="padding: 10px 20px;">
-            <a href="/logout" class="px-4 py-2">Cerrar sesión</a>
+        <div class="px-3 py-3 flex flex-row items-center">
+            <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">
+                <img src="img/cerrar-sesion.png" class="mr-2" height="25" width="25">
+                Cerrar sesión
+            </a>
         </div>
     </header>
 
@@ -73,8 +76,8 @@
                         <thead>
                             <tr class="bg-[#94B6E4] text-black">
                                 <th class="py-2 px-4 text-left">Cliente</th>
-                                <th class="py-2 px-4 text-left">Venta del servicio independiente</th>
-                                <th class="py-2 px-4 text-left">Venta de la cita</th>
+                                <th class="py-2 px-4 text-left">Servicio</th>
+                                <th class="py-2 px-4 text-left">Cita</th>
                             </tr>
                         </thead>
                         <tbody>

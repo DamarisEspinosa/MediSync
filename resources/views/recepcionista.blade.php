@@ -73,9 +73,9 @@
 
     <!-- Modal -->
     <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
-        <div class="modal-content bg-white rounded-lg p-6 w-1/3 relative">
+        <div class="modal-content bg-[#94B6E4] rounded-lg p-6 w-1/3 relative">
             <button id="close-modal" class="absolute top-2 right-2 text-gray-700 hover:text-gray-900">&times;</button>
-            <h2 class="text-2xl font-bold mb-4">Agendar servicio</h2>
+            <h2 class=" w-full text-center text-2xl font-bold mb-4">Agendar cita</h2>
 
             @if (isset($pacientes) && isset($servicios))
                 <form id="appointment-form" method="POST" action="{{ route('recepcionista.store') }}">
@@ -192,11 +192,9 @@
                     @endforeach
                 ],
                 viewDidMount: function(info) {
-                    // Aplicar restricciones de selección según la vista actual
                     applyDayRestrictions(info.view.type);
                 },
                 viewDidUpdate: function(info) {
-                    // Aplicar restricciones de selección según la vista actual
                     applyDayRestrictions(info.view.type);
                 },
                 dateClick: function(info) {
@@ -205,7 +203,6 @@
                     var dayOfWeek = selectedDate.getDay();
                     var currentView = calendar.view.type;
 
-                    // Verificar si el día es sábado o domingo según la vista actual
                     if (currentView === 'dayGridMonth') {
                         if (dayOfWeek === 6 || dayOfWeek === 5) { // Sábado y domingo en vista de mes
                             alert('No puedes seleccionar sábados y domingos.');
@@ -217,15 +214,14 @@
                             return;
                         }
                     } else if (currentView === 'timeGridDay') {
-                        if (dayOfWeek === 6 || dayOfWeek === 0) { // Sábado y domingo en vista de día
-                            alert('No puedes seleccionar sábados y domingos.');
+                        if (dayOfWeek === 6 || dayOfWeek === 0) { 
+                            alert('No contamos con servicio sábados y domingos.');
                             return;
                         }
                     }
 
-                    // Verificar si la fecha es en el pasado
                     if (selectedDate < today.setHours(0, 0, 0, 0)) {
-                        alert('No puedes seleccionar fechas pasadas.');
+                        alert('Elige una fecha válida.');
                         return;
                     }
 
@@ -246,11 +242,9 @@
                     var dayOfWeek = info.date.getDay();
                     var viewType = calendar.view.type;
 
-                    // Desactiva la selección de sábados y domingos en la vista de mes
                     if (viewType === 'dayGridMonth' && (dayOfWeek === 6 || dayOfWeek === 0)) {
                         info.el.classList.add('fc-day-disabled');
                     } else if (viewType !== 'dayGridMonth' && (dayOfWeek === 6 || dayOfWeek === 0)) {
-                        // Opcional: Desactiva sábados y domingos en otras vistas si es necesario
                         info.el.classList.add('fc-day-disabled');
                     }
                 }
@@ -258,18 +252,16 @@
 
             calendar.render();
 
-            // Cerrar el modal
             var closeModalBtn = document.getElementById('close-modal');
             closeModalBtn.addEventListener('click', function() {
                 var modal = document.getElementById('modal');
                 modal.style.display = 'none';
             });
 
-            // Inicializar select2
             $('.select2').select2();
 
             function applyDayRestrictions(viewType) {
-                var daysOfWeek = ['5', '6']; // Domingo y sábado
+                var daysOfWeek = ['5', '6']; 
                 var cells = document.querySelectorAll('.fc-daygrid-day');
 
                 cells.forEach(function(cell) {

@@ -15,7 +15,7 @@
         <div class="px-3 py-3 flex flex-row items-center">
             <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">
                 <img src="img/cerrar-sesion.png" class="mr-2" height="25" width="25">
-                Regresar
+                Cerrar sesión
             </a>
         </div>
     </header>

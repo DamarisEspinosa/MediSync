@@ -24,7 +24,6 @@ class ServiciosDoctorController extends Controller
         $validatedData = $request->validate([
             'nombre' => 'required',
             'precio' => 'required|numeric',
-            'duracion' => 'required',
         ]);
 
         $servicio->update($validatedData);

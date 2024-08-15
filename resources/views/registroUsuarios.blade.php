@@ -17,7 +17,6 @@
         <div class="px-4 py-2">
             <a href="/verUsuarios" class=" px-4 py-4 hover:text-white">Ver usuarios</a>
             <a href="/registroUsuarios" class=" px-4 py-4 hover:text-white">Registrar Empleado</a>
-            <a href="/DoctorColaborador" class=" px-4 py-4 hover:text-white">Médico colaborador</a>
         </div>
         <div class="px-3 py-3 flex flex-row items-center">
             <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">

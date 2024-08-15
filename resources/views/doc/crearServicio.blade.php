@@ -65,12 +65,6 @@
                                 class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                 placeholder="Costo" required>
                         </div>
-                        <div class="mb-4">
-                            <label for="duracion">Duración</label>
-                            <input type="text" name="duracion" id="duracion"
-                                class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-                                placeholder="Duración del servicio" required>
-                        </div>
                     </fieldset>
                     <div class="flex-grow flex items-center justify-center mt-3">
                         <button type="submit"

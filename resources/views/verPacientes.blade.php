@@ -73,8 +73,8 @@
                     <thead>
                         <tr class="bg-[#94B6E4]">
                             <th class="py-2 px-4 text-left border-2">Nombre</th>
-                            <th class="py-2 px-4 text-left border-2">Correo</th>
-                            <th class="py-2 px-4 text-center border-2">Próxima cita</th>
+                            <th class="py-2 px-4 text-center border-2">Correo</th>
+                            <th class="py-2 px-2 text-center border-2">Teléfono</th>
                             <th class="py-2 px-4 text-center border-2">Opciones</th>
                         </tr>
                     </thead>
@@ -83,15 +83,9 @@
                             @foreach ($pacientes as $paciente)
                                 <tr>
                                     <td class="py-2 px-4">{{ $paciente->nombre }}</td>
-                                    <td class="py-2 px-4">{{ $paciente->correo }}</td>
-                                    <td class="py-2 px-4 text-center">
-                                        @if($paciente->citas->isNotEmpty())
-                                            {{ $paciente->citas->first()->fecha->format('d/m/Y') }} a las {{ $paciente->citas->first()->formatted_hora }}
-                                        @else
-                                            Sin citas próximas
-                                        @endif
-                                    </td>
-                                    <td class="py-2 px-4 text-center">
+                                    <td class="py-2 px-4 text-center">{{ $paciente->correo }}</td>
+                                    <td class="py-2 px-2 text-center"> {{ $paciente->telefono }} </td>
+                                    <td class=" flex flex-row justify-center py-2 px-4 text-center">
                                         <a href="{{ route('verPago', $paciente->id) }}" class="w-10">
                                             <img src="img/detalles.png" width="23" height="23">
                                         </a>
