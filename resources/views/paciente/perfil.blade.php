@@ -58,7 +58,7 @@
                                     <td class="py-2 px-4 text-center">{{ $cita->formatted_hora }}</td>
                                     <td class="py-2 px-4 text-center">
                                         <a href="{{ route('generate.pdf', ['id' => $cita->id]) }}">
-                                            <img src="img/eliminar2.png" width="18" height="18">
+                                            <img src="img/descargar.png" width="15" height="15">
                                         </a>
                                     </td>
                                 </tr>

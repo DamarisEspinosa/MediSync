@@ -8,81 +8,51 @@
     <title>Expediente Medico</title>
 </head>
 
-<body class="bg-gradient-to-r from-[#4CA9DF] to-[#292E91]">
-    <div class="flex h-screen">
-        <div class="bg-blue-650 text-white w-1/5 p-6 flex flex-col justify-between shadow-xl">
-            <div>
-                <div class="flex items-center mb-8">
-                    <img src="{{ asset('img/logo.png') }}" alt="Logo" class="w-8 h-8 mr-2">
-                    <span class="text-2xl font-bold">Salud Conecta</span>
-                </div>
-                <ul>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/calendario.png') }}" alt="Agenda Icon" class="w-6 h-6 mr-2">
-                        <a href="/doctor" class="text-lg">Agenda</a>
-                    </li>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/usuario.png') }}" alt="Agregar servicio Icon" class="w-6 h-6 mr-2">
-                        <a href="/docPacientes" class="text-lg">Pacientes</a>
-                    </li>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/productos.png') }}" alt="Agregar paciente Icon" class="w-6 h-6 mr-2">
-                        <a href="/docServicios" class="text-lg">Servicios</a>
-                    </li>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/productos.png') }}"  alt="Ver pacientes Icon" class="w-6 h-6 mr-2">
-                        <a href="/docProductos" class="text-lg">Productos</a>
-                    </li>
-                    <li class="flex items-center mb-10">
-                        <img src="{{ asset('img/ingresos.png') }}"  alt="Ver pacientes Icon" class="w-6 h-6 mr-2">
-                        <a href="/docIngresos" class="text-lg">Ingresos</a>
-                    </li>
-                </ul>
-            </div>
-            <button
-                class="w-full flex justify-center py-2 px-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                onclick="location.href='/'">
-                Cerrar sesión
-            </button>
+<body class="bg-[#EBEBE9]">
+    <header class="flex justify-between items-center bg-opacity-75 bg-[#94B6E4]" style="height: 70px;">
+        <div class=" flex flex-row items-center" style="padding: 10px 20px;">
+            <img src="img/logo-login.png" width="50" height="50"> 
+            <h1 class="text-2xl font-bold">MediSync</h1>
         </div>
+        <div class="px-4 py-2">
+            <a href="/doctor" class=" px-4 py-4 hover:text-white">Agenda</a>
+            <a href="/docPacientes" class=" px-4 py-4 hover:text-white">Pacientes</a>
+            <a href="/docServicios" class=" px-4 py-4 hover:text-white">Servicios</a>
+            <a href="/docProductos" class=" px-4 py-4 hover:text-white">Productos</a>
+            <a href="/docIngresos" class=" px-4 py-4 hover:text-white">Ingresos</a>
+        </div>
+        <div class="px-3 py-3 flex flex-row items-center">
+            <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">
+                <img src="img/cerrar-sesion.png" class="mr-2" height="25" width="25">
+                Cerrar sesión
+            </a>
+        </div>
+    </header>
 
-        <div class="flex items-center justify-center w-3/4 ml-auto">
-            <div class="bg-white bg-opacity-10 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-xl">
-                <h2 class="text-3xl font-bold text-white text-center mb-4">Expediente Medico</h2>
-
+        <div class="flex items-center justify-center mt-5 mb-5">
+            <div class="bg-[#94B6E4] bg-opacity-50 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-md">
+                <h2 class="text-3xl font-bold text-center mb-4">Expediente Medico</h2>
                 <div class="flex-grow flex items-center justify-center mt-6">
                     <table class="min-w-full bg-white bg-opacity-10 rounded-lg shadow-xl text-white">
                         <thead>
-                            <tr class="bg-blue-500">
-                                <th class="py-2 px-4 text-left">Fecha cita</th>
-                                <th class="py-2 px-4 text-left">Más detalles</th>
+                            <tr class="bg-[#94B6E4]">
+                                <th class="py-2 px-4 text-center">Fecha cita</th>
+                                <th class="py-2 px-4 text-center">Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($citas as $cita)
-                            <tr class="hover:bg-blue-600">
+                            <tr>
                                 <td class="py-2 px-4 text-center">{{ $cita->fecha->format('d/m/Y') }}</td>
                                 <td class="py-2 px-4 text-center">
-                                    <button
-                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" onclick="location.href='/detallesCita/{{ $cita->id }}'">Ver
-                                        detalles</button>
+                                    <a href="/detallesCita/{{ $cita->id }}">
+                                                <img src="img/detalles.png" height="15" width="15">
+                                    </a>
                                 </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-
-                <div class="col-span-2 flex justify-between mt-6">
-                    <button type="button" style="margin-right: 16px;"
-                        class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" onclick="location.href='/detallesPacientes/{{ $paciente->id }}'">
-                        Regresar
-                    </button>
-                    <button type="button"
-                        class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                        onclick="location.href='/docPacientes'">
-                        Regresar al inicio
-                    </button>
                 </div>
             </div>
         </div>
