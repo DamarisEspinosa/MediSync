@@ -15,8 +15,9 @@
             <h1 class="text-2xl font-bold">MediSync</h1>
         </div>
         <div class="px-4 py-2">
-            <a href="/registroUsuarios" class=" px-4 py-4 hover:text-white">Registrar Empleado</a>
             <a href="/verUsuarios" class=" px-4 py-4 hover:text-white">Ver usuarios</a>
+            <a href="/registroUsuarios" class=" px-4 py-4 hover:text-white">Registrar Empleado</a>
+            <a href="/DoctorColaborador" class=" px-4 py-4 hover:text-white">Médico colaborador</a>
         </div>
         <div class="px-3 py-3 flex flex-row items-center">
             <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">
@@ -25,7 +26,7 @@
             </a>
         </div>
     </header>
-   <div class="flex items-center justify-center mt-5 mb-5">
+        <div class="flex items-center justify-center mt-5 mb-5">
             <div class="bg-[#94B6E4] bg-opacity-50 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-md">
                 <h2 class="text-3xl font-bold text-center mb-6">Registro de usuarios</h2>
                 <form action="{{ route('validar-registro') }}" method="POST">
@@ -48,7 +49,7 @@
                             class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                             required>
                             <option value="">Seleccione una opción</option>
-                            <option value="secretaria">Recepcionista</option>
+                            <option value="recepcionista">Recepcionista</option>
                             <option value="doctor">Doctor</option>
                             <option value="admin">Administrador</option>
                         </select>
@@ -84,11 +85,9 @@
                             Registrar
                         </button>
                     </div>
-
                 </form>
             </div>
         </div>
     </div>
 </body>
-
 </html>

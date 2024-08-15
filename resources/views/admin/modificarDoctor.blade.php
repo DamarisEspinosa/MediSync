@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/app.css')
+    <title>Modificar Médico colaborador</title>
+</head>
+
+<body class="bg-[#EBEBE9]">
+    <header class="flex justify-between items-center bg-opacity-75 bg-[#94B6E4]" style="height: 70px;">
+        <div class=" flex flex-row items-center px-3 py-3">
+            <img src="../img/logo-login.png" width="50" height="50"> 
+            <h1 class="text-2xl font-bold">MediSync</h1>
+        </div>
+        <div class="px-4 py-2">
+            <a href="/verUsuarios" class=" px-4 py-4 hover:text-white">Ver usuarios</a> 
+            <a href="/registroUsuarios" class=" px-4 py-4 hover:text-white">Registrar Empleado</a>
+            <a href="/DoctorColaborador" class=" px-4 py-4 hover:text-white">Médico colaborador</a>
+        </div>
+        <div class="px-3 py-3 flex flex-row items-center">
+            <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">
+                <img src="../img/cerrar-sesion.png" class="mr-2" height="25" width="25">
+                Cerrar sesión
+            </a>
+        </div>
+    </header>
+
+        <div class="flex items-center justify-center mt-5 mb-5">
+            <div class="bg-[#94B6E4] bg-opacity-50 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-md">
+                <h2 class="text-3xl font-bold text-center mb-6">Médico colaborador</h2>
+                <form action="{{ route('doctores.update', $doctor->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="mb-4">
+                        <label for="nombre_completo">Nombre completo</label>
+                        <input type="text" name="nombre_completo" id="nombre_completo" value="{{$doctor->nombre_completo }}"
+                            class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                            placeholder="Nombre completo" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="correo">Correo</label>
+                        <input type="email" name="correo" id="correo" value="{{$doctor->correo}}"
+                            class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                            placeholder="Correo" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" 
+                            class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                            placeholder="Contraseña" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" name="telefono" id="telefono" value="{{$doctor->telefono}}"
+                            class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                            placeholder="Número de teléfono">
+                    </div>
+                    <div class="flex-grow flex items-center justify-center mt-6">
+                        <button type="submit"
+                            class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Actualizar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+
+</html>
+

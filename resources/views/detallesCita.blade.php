@@ -17,7 +17,7 @@
 <body class="bg-[#EBEBE9]">
     <header class="flex justify-between items-center bg-opacity-75 bg-[#94B6E4]" style="height: 70px;">
         <div class=" flex flex-row items-center" style="padding: 10px 20px;">
-            <img src="img/logo-login.png" width="50" height="50"> 
+            <img src="../img/logo-login.png" width="50" height="50"> 
             <h1 class="text-2xl font-bold">MediSync</h1>
         </div>
         <div class="px-4 py-2">
@@ -29,14 +29,14 @@
         </div>
         <div class="px-3 py-3 flex flex-row items-center">
             <a href="/logout" class="px-4 py-2 flex flex-row hover:text-white">
-                <img src="img/cerrar-sesion.png" class="mr-2" height="25" width="25">
+                <img src="../img/cerrar-sesion.png" class="mr-2" height="25" width="25">
                 Cerrar sesión
             </a>
         </div>
     </header>
 
         <div class="flex items-center justify-center mt-5 mb-5">
-            <div class="bg-[#94B6E4] bg-opacity-50 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-md">
+            <div class="bg-[#94B6E4] bg-opacity-50 p-8 md:p-10 rounded-lg shadow-xl w-full max-w-3xl">
                 <h2 class="text-3xl font-bold text-center mb-4">Detalles de la cita</h2>
                 <form action="{{ route('actualizarCita', ['id' => $cita->id]) }}" method="POST">
                     @csrf
@@ -96,14 +96,15 @@
                                     @foreach (explode(',', $cita->medicamentos) as $medicamento)
                                         <div class="flex items-center">
                                             <input type="text" name="medicamentos[]" value="{{ $medicamento }}"
-                                                placeholder="Medicamento" class="w-full px-4 py-2 border rounded-md">
+                                                placeholder="Medicamento" 
+                                                class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                                             <button type="button" onclick="removeField(this)"
                                                 class="ml-2 text-2xl font-bold">-</button>
                                         </div>
                                     @endforeach
                                 </div>
-                                <button type="button" onclick="addMedicationField()" class="mt-2">+
-                                    Añadir más
+                                <button type="button" class="hover:text-white" onclick="addMedicationField()" class="mt-2">
+                                    Añadir +
                                 </button>
                             </div>
                             <div class="mb-2">
@@ -112,14 +113,17 @@
                                     @foreach (explode(',', $cita->estudios) as $estudio)
                                         <div class="flex items-center">
                                             <input type="text" name="estudios[]" value="{{ $estudio }}"
-                                                placeholder="Estudio" class="w-full px-4 py-2 border rounded-md">
+                                                placeholder="Estudio" 
+                                                class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                                             <button type="button" onclick="removeField(this)"
-                                                class="ml-2 text-2xl font-bold ">-</button>
+                                                class="ml-2 text-2xl font-bold ">
+                                                -
+                                            </button>
                                         </div>
                                     @endforeach
                                 </div>
-                                <button type="button" onclick="addEstudioField()" class="mt-2">+
-                                    Añadir más
+                                <button type="button" class="hover:text-white" onclick="addEstudioField()" class="mt-2">
+                                    Añadir +
                                 </button>
                             </div>
                         </div>
@@ -133,7 +137,7 @@
                                     @foreach ($productosData as $producto)
                                         <div class="flex items-center">
                                             <select name="productos[]"
-                                                class="w-full px-4 py-2 border rounded-md select2"
+                                                class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                                 onchange="updateTotal(this)">
                                                 <option value="">Selecciona un producto</option>
                                                 @foreach ($productos as $item)
@@ -147,13 +151,14 @@
                                             </select>
                                             <input type="number" name="cantidades[]"
                                                 value="{{ $producto['cantidad'] }}" placeholder="Cantidad"
-                                                class="w-full px-4 py-2 border rounded-md ml-2" min="1"
+                                                class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" 
+                                                min="1"
                                                 onchange="validateQuantity(this)">
                                         </div>
                                     @endforeach
                                 </div>
-                                <button type="button" onclick="addProductField()" class="mt-2">+
-                                    Añadir más
+                                <button type="button" class="hover:text-white" onclick="addProductField()" class="mt-2">
+                                    Añadir +
                                 </button>
                             </div>
 
@@ -170,7 +175,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex justify-between mt-6">
+                    <div class="flex flex-row justify-center mt-6">
                         <button type="submit"
                             class="w-2/3 flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                             Guardar

@@ -72,7 +72,7 @@
                         <tr class="bg-[#94B6E4]">
                             <th class="py-2 px-4 text-center border-2">Nombre</th>
                             <th class="py-2 px-4 text-center border-2">Marca</th>
-                            <th class="py-2 px-4 text-center border-2">Costo</th>
+                            <th class="py-2 px-4 text-center border-2">Precio</th>
                             <th class="py-2 px-4 text-center border-2">Cantidad</th>
                             <th class="py-2 px-4 text-center border-2">Opciones</th>
                         </tr>
@@ -83,7 +83,7 @@
                                 <tr>
                                     <td class="py-2 px-4">{{ $producto->nombre}}</td>
                                     <td class="py-2 px-4 text-center">{{ $producto->marca}}</td>
-                                    <td class="py-2 px-4 text-center">{{ $producto->costo}}</td>
+                                    <td class="py-2 px-4 text-center">${{ $producto->costo}}</td>
                                     <td class="py-2 px-4 text-center">{{ $producto->cantidad}}</td>
                                     <td class="py-2 px-4 flex flex-row justify-center w-full">
                                         <form action="{{ route('docProductos.edit', $producto->id) }}" method="get">
@@ -94,7 +94,7 @@
                                         <form action="{{ route('docProductos.destroy', $producto->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="w-10">
+                                            <button type="submit" onclick="return confirmDelete()" class="w-10">
                                                 <img src="img/eliminar2.png" width="18" height="18">
                                             </button>
                                         </form>
@@ -118,5 +118,9 @@
         </div>
     </div>
 </body>
-
+<script>
+    function confirmDelete() {
+        return confirm('¿Estás seguro de que deseas eliminar el producto?');
+    }
+</script>
 </html>

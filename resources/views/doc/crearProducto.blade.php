@@ -66,7 +66,7 @@
                                 placeholder="Marca del producto" required>
                         </div>
                         <div class="mb-4">
-                            <label for="costo">Costo</label>
+                            <label for="costo">Precio</label>
                             <input type="number" name="costo" id="costo"
                                 class="mt-1 block w-full px-3 py-2 bg-transparent border-black border-2 rounded-full shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                                 placeholder="Costo" required>

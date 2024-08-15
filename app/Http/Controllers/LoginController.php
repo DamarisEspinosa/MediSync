@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Doctor;
 use App\Models\Paciente;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -29,27 +30,40 @@ class LoginController extends Controller
 
     public function doLogin(Request $request)
     {
-        $credentials = [
-            "correo" => $request->correo,
-            "password" => $request->password
-        ];
+        $credentials = $request->only('correo', 'password');
 
-        if(Auth::attempt($credentials)) {
+        if (Auth::attempt(['correo' => $credentials['correo'], 'password' => $credentials['password']])) {
             $request->session()->regenerate();
 
-            // Buscamos al usuario por correo 
-            $usuario = User::where('correo', $request->correo)->firstOrFail();
+            $usuario = User::where('correo', $request->correo)->first();
             if($usuario->tipoUsuario === 'admin') {
-                return redirect(route('administrador'));
-            } else if($usuario->tipoUsuario === 'doctor'){
-                return redirect(route('doctor.index'));
-            } else if($usuario->tipoUsuario === 'secretaria') {
+                return redirect(route('verUsuarios'));
+            } elseif ($usuario->tipoUsuario === 'recepcionista') {
                 return redirect(route('recepcionista.index'));
+            } elseif ($usuario->tipoUsuario === 'doctor') {
+                return redirect(route('doctor.index'));
+            } else {
+                return back()->withErrors([
+                    'correo' => 'No se pudo determinar el tipo de usuario.',
+                ])->withInput();
             }
-        } 
+        }
 
-        // si llega hasta aquí entonces la autenticación falló 
-        return redirect(route('login'));
+        $paciente = Paciente::where('correo', $credentials['correo'])->first();
+        if ($paciente && Hash::check($credentials['password'], $paciente->password)) {
+            $request->session()->regenerate();
+            return redirect(route('paciente.perfil')); 
+        }
+
+         $doctor = Doctor::where('correo', $credentials['correo'])->first();
+         if ($doctor && Hash::check($credentials['password'], $doctor->password)) {
+                $request->session()->regenerate();
+                return redirect(route('inicioDocColab')); 
+         }
+ 
+        return back()->withErrors([
+            'correo' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
+        ])->withInput();
     }
 
     public function logout(Request $request)

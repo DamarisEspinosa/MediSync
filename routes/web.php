@@ -15,8 +15,8 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ServiciosDoctorController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\VentaDocController;
-use App\Http\Controllers\PDFController;
-
+use App\Http\Controllers\DoctorColaboradorController;
+use App\Http\Controllers\EnfermeraController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,6 +24,10 @@ Route::get('/', function () {
 })->name('login');
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PDFController;
+
+Route::post('/registroDoctor', [DoctorColaboradorController::class, 'registroDoctor'])->name('validar-registro-doctor');
+Route::post('/registroEnfermera', [EnfermeraController::class, 'registroEnfermera'])->name('validar-registro-enfermera');
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('/validar-registro', [LoginController::class, 'register'])->name('validar-registro');
@@ -33,12 +37,25 @@ Route::post('/registrar', [PacienteController::class, 'registerPatient'])->name(
 Route::post('/registrar-pacientes', [PacientesController::class, 'registerPatient'])->name('registrar-pacientes');
 Route::post('/registrar-pacientes-doc', [PacientesDoctorController::class, 'registerPatient'])->name('registrar-pacientes-doc');
 
-//Para que funcionen las tablas
+// Ver usuarios 
 Route::get('/verUsuarios', [UserController::class, 'index'])->name('verUsuarios');
 Route::delete('/eliminar/{id}', [UserController::class, 'destroy'])->name('usuarios.eliminar');
 Route::get('/modificar/{id}', [UserController::class, 'edit'])->name('usuarios.edit');
 Route::post('/modificar/{id}', [UserController::class, 'update'])->name('usuarios.update');
 
+// Ver doctor colaborador
+Route::get('/DoctorColaborador', [DoctorColaboradorController::class, 'index'])->name('DoctorColaborador.index');
+Route::delete('/DoctorColaborador/eliminar/{id}', [DoctorColaboradorController::class, 'destroy'])->name('doctores.eliminar');
+Route::get('/modificarDoctor/{id}', [DoctorColaboradorController::class, 'edit'])->name('doctores.edit');
+Route::put('/modificarDoctor/{id}', [DoctorColaboradorController::class, 'update'])->name('doctores.update');
+
+// Ver enfermeras 
+Route::get('/Enfermera', [EnfermeraController::class, 'index'])->name('Enfermera.index');
+Route::get('/modificarEnfermera/{id}', [EnfermeraController::class, 'edit'])->name('enfermera.edit');
+Route::put('/modificarEnfermera/{id}', [EnfermeraController::class, 'update'])->name('enfermera.update');
+Route::delete('/Enfermera/{id}', [EnfermeraController::class, 'destroy'])->name('enfermera.eliminar');
+
+// Ver pacientes para recepcionista
 Route::get('/verPacientes', [PacientesController::class, 'index'])->name('verPacientes');
 Route::get('/verPacientes/{paciente}/modificar', [PacientesController::class, 'edit'])->name('pacientes.edit');
 Route::put('/verPacientes/{paciente}/actualizar', [PacientesController::class, 'update'])->name('pacientes.update');
@@ -71,7 +88,7 @@ Route::delete('/docPacientes/{paciente}', [PacientesDoctorController::class, 'de
 Route::get('/docPacientes/{paciente}/modificar', [PacientesDoctorController::class, 'edit'])->name('pacientesDoc.edit');
 Route::put('/docPacientes/{paciente}/actualizar', [PacientesDoctorController::class, 'update'])->name('pacientesDoc.update');
 
-// Ver pagos de un paciente específico
+// Ver pagos 
 Route::get('/pago/{id}', [PacientesController::class, 'verPagos'])->name('verPagos');
 Route::get('/pago/{paciente_id}', [CitaController::class, 'verPago'])->name('verPago');
 Route::post('/pago/cambiarEstado/{cita_id}', [CitaController::class, 'cambiarEstadoPago'])->name('cambiarEstadoPago');
@@ -85,25 +102,19 @@ Route::get('/ventas', [VentaDocController::class, 'create'])->name('ventas.creat
 Route::post('/ventas', [VentaDocController::class, 'store'])->name('ventas.store');
 Route::get('/ventas/max-stock/{id}', [VentaController::class, 'obtenerMaxStock'])->name('ventas.obtenerMaxStock');
 
-Route::resource('recepcionista', CitaController::class)->middleware(['auth','verified']);
-Route::resource('doctor', DoctorController::class)->middleware(['auth','verified']);
+Route::resource('recepcionista', CitaController::class)->middleware(['auth', 'verified']);
+Route::resource('doctor', DoctorController::class)->middleware(['auth', 'verified']);
 Route::get('/perfil', [PacienteController::class, 'showProfile'])->name('paciente.perfil')->middleware(['auth:paciente', 'verified']);
-Route::resource('servicios', ServicioController::class)->middleware(['auth','verified']);
-Route::resource('crearServicio', ServiciosDoctorController::class)->middleware(['auth','verified']);
-Route::resource('crearProducto', ProductosDoctorController::class)->middleware(['auth','verified']);
-Route::resource('registrarProducto', ProductosController::class)->middleware(['auth','verified']);
+Route::resource('servicios', ServicioController::class)->middleware(['auth', 'verified']);
+Route::resource('crearServicio', ServiciosDoctorController::class)->middleware(['auth', 'verified']);
+Route::resource('crearProducto', ProductosDoctorController::class)->middleware(['auth', 'verified']);
+Route::resource('registrarProducto', ProductosController::class)->middleware(['auth', 'verified']);
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-Route::get('/generatePDF',[PDFController::class, 'generatePDF'])->name('generatePDF');
-Route::get('/myPDF', function() {
-    return view('myPDF');
-})->name('myPDF');
+
+Route::get('/doctor/cita/{id}', [PacientesDoctorController::class, 'detallesCita'])->name('detallesCita');
 
 // Vistas para navegación entre ventanas 
-Route::get('/administrador', function () {
-    return view('verUsuarios');
-})->name('administrador');
-
 Route::get('/citas', function () {
     return view('citas');
 });
@@ -124,6 +135,10 @@ Route::get('/expediente', function () {
     return view('expediente');
 });
 
+Route::get('/registroUsuarios', function () {
+    return view('registroUsuarios');
+});
+
 Route::get('/registroPacientes', function () {
     return view('registroPacientes');
 });
@@ -132,9 +147,17 @@ Route::get('/registroPacientesDoc', function () {
     return view('doc.registroPacientesDoc');
 })->name('registroPacientesDoc');
 
-Route::get('/registroUsuarios', function () {
-    return view('registroUsuarios');
-})->name('admin');
+Route::get('/registroDoctor', function () {
+    return view('admin.registroDoctor');
+})->name('registroDoctor');
+
+Route::get('/registroEnfermera', function () {
+    return view('admin.registroEnfermera');
+})->name('registroEnfermera');
+
+Route::get('/inicioDocColab', function () {
+    return view('docColab.inicioDocColab');
+})->name('inicioDocColab');
 
 Route::get('/modificar', function () {
     return view('modificar');
@@ -143,6 +166,14 @@ Route::get('/modificar', function () {
 Route::get('/modificarPacientes', function () {
     return view('modificarPacientes');
 });
+
+Route::get('/modificarEnfermera', function () {
+    return view('admin.modificarEnfermera');
+})->name('modificarEnfermera');
+
+Route::get('/modificarDoctor', function () {
+    return view('admin.modificarDoctor');
+})->name('modificarDoctor');
 
 Route::get('/modificarServicio', function () {
     return view('modificarServicio');
@@ -172,6 +203,7 @@ Route::get('/registro', function () {
     return view('paciente.registro');
 })->name('registro');
 
+Route::get('generate-pdf/{id}', [PDFController::class, 'generatePDF'])->name('generate.pdf');
 
 
 Route::middleware('auth')->group(function () {

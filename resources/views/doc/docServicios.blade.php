@@ -90,7 +90,7 @@
                                         <form action="{{ route('docServicios.destroy', $servicio->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="w-10">
+                                            <button type="submit" onclick="return confirmDelete()" class="w-10">
                                                 <img src="img/eliminar2.png" width="18" height="18">
                                             </button>
                                         </form>
@@ -109,5 +109,9 @@
         </div>
     </div>
 </body>
-
+<script>
+    function confirmDelete() {
+        return confirm('¿Estás seguro de que deseas eliminar el servicio?');
+    }
+</script>
 </html>
