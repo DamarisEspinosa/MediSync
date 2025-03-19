@@ -1,0 +1,39 @@
+name: Check and Update Dependencies
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Se ejecutará cada dos semanas, el domingo a medianoche (hora UTC)
+  workflow_dispatch:   # Permite ejecutarlo manualmente también
+    inputs:
+      force_update:
+        description: 'Forzar actualización de dependencias'
+        required: false
+        default: 'false'
+
+jobs:
+  check-dependencies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Review and update dependencies
+        run: |
+          npm outdated  # Revisa si hay dependencias desactualizadas
+          if [ "${{ github.event.inputs.force_update }}" == "true" ]; then
+            npm update  # Actualiza solo si es necesario
+          fi
+
+      - name: Commit and push changes (if needed)
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "GitHub Actions"
+          git add package.json package-lock.json
+          git diff --exit-code || (git commit -m "Update dependencies" && git push)
