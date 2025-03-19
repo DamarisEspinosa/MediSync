@@ -33,7 +33,7 @@ jobs:
 
       - name: Commit and push changes (if needed)
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "GitHub Actions"
+          git config --local user.email "2130081@upv.edu.mx"
+          git config --local user.name "DamarisEspinosa"
           git add package.json package-lock.json
           git diff --exit-code || (git commit -m "Update dependencies" && git push)
