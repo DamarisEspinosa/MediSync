@@ -26,10 +26,7 @@ jobs:
 
       - name: Review and update dependencies
         run: |
-          npm outdated  # Revisa si hay dependencias desactualizadas
-          if [ "${{ github.event.inputs.force_update }}" == "true" ]; then
-            npm update  # Actualiza solo si es necesario
-          fi
+          npm update  # Actualiza
 
       - name: Commit and push changes (if needed)
         run: |
